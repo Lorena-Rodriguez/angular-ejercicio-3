@@ -1,0 +1,32 @@
+/* home.component.css */
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(90deg, #1976d2 0%, #42a5f5 100%);
+}
+
+button[mat-button], button[mat-raised-button] {
+  margin-left: 12px;
+  font-size: 1rem;
+  text-transform: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.active-link {
+  border-bottom: 2px solid #fff;
+  color: #fff !important;
+}
+
+button[mat-raised-button] {
+  box-shadow: 0 2px 8px rgba(33, 150, 243, 0.15);
+}
+/* home.component.css */
+.spacer {
+  flex: 1 1 auto;
+}

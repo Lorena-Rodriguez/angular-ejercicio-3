@@ -1,0 +1,545 @@
+{
+  "clientes": [
+    {
+      "idCliente": "C001",
+      "nombre": "Juan",
+      "apellidoUno": "Pérez",
+      "apellidoDos": "Gómez",
+      "direccion": "Calle Mayor 123",
+      "codigoPostal": "28001",
+      "provincia": "Madrid",
+      "poblacion": "Madrid",
+      "email": "juan.perez@example.com",
+      "telefonoFijo": "910000001",
+      "telefonoMovil": "600000001",
+      "nif": "12345678A"
+    },
+    {
+      "idCliente": "C002",
+      "nombre": "María",
+      "apellidoUno": "López",
+      "apellidoDos": "Martínez",
+      "direccion": "Avenida Sol 45",
+      "codigoPostal": "29002",
+      "provincia": "Málaga",
+      "poblacion": "Málaga",
+      "email": "maria.lopez@example.com",
+      "telefonoFijo": "910000002",
+      "telefonoMovil": "600000002",
+      "nif": "23456789B"
+    },
+    {
+      "idCliente": "C003",
+      "nombre": "Carlos",
+      "apellidoUno": "García",
+      "apellidoDos": "Fernández",
+      "direccion": "Plaza Luna 10",
+      "codigoPostal": "41003",
+      "provincia": "Sevilla",
+      "poblacion": "Sevilla",
+      "email": "carlos.garcia@example.com",
+      "telefonoFijo": "910000003",
+      "telefonoMovil": "600000003",
+      "nif": "34567890C"
+    },
+    {
+      "idCliente": "C004",
+      "nombre": "Ana",
+      "apellidoUno": "Martín",
+      "apellidoDos": "Ruiz",
+      "direccion": "Calle Flor 78",
+      "codigoPostal": "46004",
+      "provincia": "Valencia",
+      "poblacion": "Valencia",
+      "email": "ana.martin@example.com",
+      "telefonoFijo": "910000004",
+      "telefonoMovil": "600000004",
+      "nif": "45678901D"
+    },
+    {
+      "idCliente": "C005",
+      "nombre": "Luis",
+      "apellidoUno": "Hernández",
+      "apellidoDos": "Sánchez",
+      "direccion": "Calle Mar 56",
+      "codigoPostal": "50005",
+      "provincia": "Zaragoza",
+      "poblacion": "Zaragoza",
+      "email": "luis.hernandez@example.com",
+      "telefonoFijo": "910000005",
+      "telefonoMovil": "600000005",
+      "nif": "56789012E"
+    },
+    {
+      "idCliente": "C006",
+      "nombre": "Laura",
+      "apellidoUno": "Torres",
+      "apellidoDos": "Vega",
+      "direccion": "Avenida Norte 34",
+      "codigoPostal": "33006",
+      "provincia": "Asturias",
+      "poblacion": "Oviedo",
+      "email": "laura.torres@example.com",
+      "telefonoFijo": "910000006",
+      "telefonoMovil": "600000006",
+      "nif": "67890123F"
+    },
+    {
+      "idCliente": "C007",
+      "nombre": "Pedro",
+      "apellidoUno": "Ramírez",
+      "apellidoDos": "Morales",
+      "direccion": "Calle Sur 12",
+      "codigoPostal": "35007",
+      "provincia": "Las Palmas",
+      "poblacion": "Las Palmas",
+      "email": "pedro.ramirez@example.com",
+      "telefonoFijo": "910000007",
+      "telefonoMovil": "600000007",
+      "nif": "78901234G"
+    },
+    {
+      "idCliente": "C008",
+      "nombre": "Sofía",
+      "apellidoUno": "Navarro",
+      "apellidoDos": "Castro",
+      "direccion": "Calle Este 89",
+      "codigoPostal": "07008",
+      "provincia": "Baleares",
+      "poblacion": "Palma",
+      "email": "sofia.navarro@example.com",
+      "telefonoFijo": "910000008",
+      "telefonoMovil": "600000008",
+      "nif": "89012345H"
+    },
+    {
+      "idCliente": "C009",
+      "nombre": "Javier",
+      "apellidoUno": "Ortega",
+      "apellidoDos": "Gil",
+      "direccion": "Calle Oeste 67",
+      "codigoPostal": "08009",
+      "provincia": "Barcelona",
+      "poblacion": "Barcelona",
+      "email": "javier.ortega@example.com",
+      "telefonoFijo": "910000009",
+      "telefonoMovil": "600000009",
+      "nif": "90123456I"
+    },
+    {
+      "idCliente": "C010",
+      "nombre": "Elena",
+      "apellidoUno": "Domínguez",
+      "apellidoDos": "Pérez",
+      "direccion": "Calle Central 23",
+      "codigoPostal": "15010",
+      "provincia": "A Coruña",
+      "poblacion": "A Coruña",
+      "email": "elena.dominguez@example.com",
+      "telefonoFijo": "910000010",
+      "telefonoMovil": "600000010",
+      "nif": "01234567J"
+    },
+    {
+      "idCliente": "C011",
+      "nombre": "Miguel",
+      "apellidoUno": "Santos",
+      "apellidoDos": "López",
+      "direccion": "Calle Norte 45",
+      "codigoPostal": "26011",
+      "provincia": "La Rioja",
+      "poblacion": "Logroño",
+      "email": "miguel.santos@example.com",
+      "telefonoFijo": "910000011",
+      "telefonoMovil": "600000011",
+      "nif": "12345678K"
+    },
+    {
+      "idCliente": "C012",
+      "nombre": "Isabel",
+      "apellidoUno": "Vargas",
+      "apellidoDos": "Molina",
+      "direccion": "Calle Sur 78",
+      "codigoPostal": "31012",
+      "provincia": "Navarra",
+      "poblacion": "Pamplona",
+      "email": "isabel.vargas@example.com",
+      "telefonoFijo": "910000012",
+      "telefonoMovil": "600000012",
+      "nif": "23456789L"
+    },
+    {
+      "idCliente": "C013",
+      "nombre": "Raúl",
+      "apellidoUno": "Cruz",
+      "apellidoDos": "Jiménez",
+      "direccion": "Calle Este 90",
+      "codigoPostal": "32013",
+      "provincia": "Ourense",
+      "poblacion": "Ourense",
+      "email": "raul.cruz@example.com",
+      "telefonoFijo": "910000013",
+      "telefonoMovil": "600000013",
+      "nif": "34567890M"
+    },
+    {
+      "idCliente": "C014",
+      "nombre": "Carmen",
+      "apellidoUno": "Rojas",
+      "apellidoDos": "Serrano",
+      "direccion": "Calle Oeste 56",
+      "codigoPostal": "33014",
+      "provincia": "Asturias",
+      "poblacion": "Gijón",
+      "email": "carmen.rojas@example.com",
+      "telefonoFijo": "910000014",
+      "telefonoMovil": "600000014",
+      "nif": "45678901N"
+    },
+    {
+      "idCliente": "C015",
+      "nombre": "Andrés",
+      "apellidoUno": "Blanco",
+      "apellidoDos": "Suárez",
+      "direccion": "Calle Central 34",
+      "codigoPostal": "34015",
+      "provincia": "Palencia",
+      "poblacion": "Palencia",
+      "email": "andres.blanco@example.com",
+      "telefonoFijo": "910000015",
+      "telefonoMovil": "600000015",
+      "nif": "56789012O"
+    }
+  ],
+  "productos": [
+    {
+      "idProducto": "P001",
+      "nombre": "Manzana",
+      "descripcion": "Manzana roja fresca",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Frutas",
+      "precioVenta": 2.5,
+      "descuentoVenta": 10,
+      "stock": 100
+    },
+    {
+      "idProducto": "P002",
+      "nombre": "Leche",
+      "descripcion": "Leche entera pasteurizada",
+      "unidadesMedida": "Litro",
+      "categoria": "Lácteos",
+      "precioVenta": 1.2,
+      "descuentoVenta": 5,
+      "stock": 200
+    },
+    {
+      "idProducto": "P003",
+      "nombre": "Pan",
+      "descripcion": "Pan integral",
+      "unidadesMedida": "Unidad",
+      "categoria": "Panadería",
+      "precioVenta": 1.0,
+      "descuentoVenta": 0,
+      "stock": 50
+    },
+    {
+      "idProducto": "P004",
+      "nombre": "Arroz",
+      "descripcion": "Arroz blanco de grano largo",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Cereales",
+      "precioVenta": 3.0,
+      "descuentoVenta": 15,
+      "stock": 150
+    },
+    {
+      "idProducto": "P005",
+      "nombre": "Aceite de Oliva",
+      "descripcion": "Aceite de oliva virgen extra",
+      "unidadesMedida": "Litro",
+      "categoria": "Aceites",
+      "precioVenta": 5.5,
+      "descuentoVenta": 20,
+      "stock": 80
+    },
+    {
+      "idProducto": "P006",
+      "nombre": "Queso",
+      "descripcion": "Queso manchego curado",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Lácteos",
+      "precioVenta": 12.0,
+      "descuentoVenta": 10,
+      "stock": 30
+    },
+    {
+      "idProducto": "P007",
+      "nombre": "Tomate",
+      "descripcion": "Tomate fresco de huerta",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Verduras",
+      "precioVenta": 2.0,
+      "descuentoVenta": 5,
+      "stock": 120
+    },
+    {
+      "idProducto": "P008",
+      "nombre": "Café",
+      "descripcion": "Café molido 100% natural",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Bebidas",
+      "precioVenta": 8.0,
+      "descuentoVenta": 10,
+      "stock": 60
+    },
+    {
+      "idProducto": "P009",
+      "nombre": "Azúcar",
+      "descripcion": "Azúcar blanca refinada",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Dulces",
+      "precioVenta": 1.5,
+      "descuentoVenta": 0,
+      "stock": 200
+    },
+    {
+      "idProducto": "P010",
+      "nombre": "Sal",
+      "descripcion": "Sal marina fina",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Condimentos",
+      "precioVenta": 0.8,
+      "descuentoVenta": 0,
+      "stock": 300
+    },
+    {
+      "idProducto": "P011",
+      "nombre": "Pasta",
+      "descripcion": "Pasta tipo espagueti",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Cereales",
+      "precioVenta": 2.2,
+      "descuentoVenta": 5,
+      "stock": 100
+    },
+    {
+      "idProducto": "P012",
+      "nombre": "Pollo",
+      "descripcion": "Pollo fresco entero",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Carnes",
+      "precioVenta": 6.0,
+      "descuentoVenta": 10,
+      "stock": 50
+    },
+    {
+      "idProducto": "P013",
+      "nombre": "Zanahoria",
+      "descripcion": "Zanahoria fresca",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Verduras",
+      "precioVenta": 1.8,
+      "descuentoVenta": 0,
+      "stock": 150
+    },
+    {
+      "idProducto": "P014",
+      "nombre": "Yogur",
+      "descripcion": "Yogur natural sin azúcar",
+      "unidadesMedida": "Unidad",
+      "categoria": "Lácteos",
+      "precioVenta": 0.9,
+      "descuentoVenta": 5,
+      "stock": 100
+    },
+    {
+      "idProducto": "P015",
+      "nombre": "Chocolate",
+      "descripcion": "Chocolate negro 70% cacao",
+      "unidadesMedida": "Unidad",
+      "categoria": "Dulces",
+      "precioVenta": 2.5,
+      "descuentoVenta": 15,
+      "stock": 80
+    }
+  ],
+  "unidadesMedida": [
+    {
+      "idUnidad": "U001",
+      "descripcion": "Kilogramo"
+    },
+    {
+      "idUnidad": "U002",
+      "descripcion": "Litro"
+    },
+    {
+      "idUnidad": "U003",
+      "descripcion": "Unidad"
+    }
+  ],
+
+  "categorias": [
+    {
+      "idCategoria": "C001",
+      "descripcion": "Frutas"
+    },
+    {
+      "idCategoria": "C002",
+      "descripcion": "Lácteos"
+    },
+    {
+      "idCategoria": "C003",
+      "descripcion": "Panadería"
+    },
+    {
+      "idCategoria": "C004",
+      "descripcion": "Cereales"
+    },
+    {
+      "idCategoria": "C005",
+      "descripcion": "Aceites"
+    },
+    {
+      "idCategoria": "C006",
+      "descripcion": "Verduras"
+    },
+    {
+      "idCategoria": "C007",
+      "descripcion": "Bebidas"
+    },
+    {
+      "idCategoria": "C008",
+      "descripcion": "Dulces"
+    },
+    {
+      "idCategoria": "C009",
+      "descripcion": "Condimentos"
+    },
+    {
+      "idCategoria": "C010",
+      "descripcion": "Carnes"
+    }
+  ],
+  "poblaciones": [
+    {
+      "codigoPostal": "28001",
+      "provincia": "Madrid",
+      "poblacion": "Madrid"
+    },
+    {
+      "codigoPostal": "29002",
+      "provincia": "Málaga",
+      "poblacion": "Málaga"
+    },
+    {
+      "codigoPostal": "41003",
+      "provincia": "Sevilla",
+      "poblacion": "Sevilla"
+    },
+    {
+      "codigoPostal": "46004",
+      "provincia": "Valencia",
+      "poblacion": "Valencia"
+    },
+    {
+      "codigoPostal": "50005",
+      "provincia": "Zaragoza",
+      "poblacion": "Zaragoza"
+    },
+    {
+      "codigoPostal": "33006",
+      "provincia": "Asturias",
+      "poblacion": "Oviedo"
+    },
+    {
+      "codigoPostal": "35007",
+      "provincia": "Las Palmas",
+      "poblacion": "Las Palmas"
+    },
+    {
+      "codigoPostal": "07008",
+      "provincia": "Baleares",
+      "poblacion": "Palma"
+    },
+    {
+      "codigoPostal": "08009",
+      "provincia": "Barcelona",
+      "poblacion": "Barcelona"
+    },
+    {
+      "codigoPostal": "15010",
+      "provincia": "A Coruña",
+      "poblacion": "A Coruña"
+    },
+    {
+      "codigoPostal": "26011",
+      "provincia": "La Rioja",
+      "poblacion": "Logroño"
+    },
+    {
+      "codigoPostal": "31012",
+      "provincia": "Navarra",
+      "poblacion": "Pamplona"
+    },
+    {
+      "codigoPostal": "32013",
+      "provincia": "Ourense",
+      "poblacion": "Ourense"
+    },
+    {
+      "codigoPostal": "33014",
+      "provincia": "Asturias",
+      "poblacion": "Gijón"
+    },
+    {
+      "codigoPostal": "34015",
+      "provincia": "Palencia",
+      "poblacion": "Palencia"
+    },
+    {
+      "codigoPostal": "28002",
+      "provincia": "Madrid",
+      "poblacion": "Alcalá de Henares"
+    },
+    {
+      "codigoPostal": "28003",
+      "provincia": "Madrid",
+      "poblacion": "Móstoles"
+    },
+    {
+      "codigoPostal": "28004",
+      "provincia": "Madrid",
+      "poblacion": "Fuenlabrada"
+    },
+    {
+      "codigoPostal": "28005",
+      "provincia": "Madrid",
+      "poblacion": "Leganés"
+    },
+    {
+      "codigoPostal": "28006",
+      "provincia": "Madrid",
+      "poblacion": "Getafe"
+    },
+    {
+      "codigoPostal": "28007",
+      "provincia": "Madrid",
+      "poblacion": "Alcorcón"
+    },
+    {
+      "codigoPostal": "28008",
+      "provincia": "Madrid",
+      "poblacion": "Torrejón de Ardoz"
+    },
+    {
+      "codigoPostal": "28009",
+      "provincia": "Madrid",
+      "poblacion": "Parla"
+    },
+    {
+      "codigoPostal": "28010",
+      "provincia": "Madrid",
+      "poblacion": "Coslada"
+    }
+  ]
+}
