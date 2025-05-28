@@ -1,0 +1,191 @@
+<div class="registro-container" role="dialog" aria-modal="true" aria-labelledby="registro-title">
+  <h2 id="registro-title">Registro de Usuario</h2>
+  <form [formGroup]="registroForm" autocomplete="off" novalidate>
+    <!-- * Email -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        aria-required="true"
+        aria-label="Correo electrónico"
+        autocomplete="username"
+        required
+        (blur)="checkEmailExists()"
+      />
+      <mat-error *ngIf="registroForm.get('email')?.hasError('required')">
+        El email es obligatorio.
+      </mat-error>
+      <mat-error *ngIf="registroForm.get('email')?.hasError('email')">
+        Introduce un email válido.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Confirmación de Email -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Confirmar Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="emailConfirm"
+        aria-required="true"
+        aria-label="Confirmar correo electrónico"
+        autocomplete="username"
+        required
+        (blur)="checkEmailExists()"
+      />
+      <mat-error *ngIf="registroForm.get('emailConfirm')?.hasError('required')">
+        La confirmación de email es obligatoria.
+      </mat-error>
+      <mat-error *ngIf="registroForm.get('emailConfirm')?.hasError('email')">
+        Introduce un email válido.
+      </mat-error>
+      <mat-error *ngIf="registroForm.hasError('emailsNoMatch')">
+        Los emails no coinciden.
+      </mat-error>
+      <mat-error *ngIf="emailExistsError">
+        {{ emailExistsError }}
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Nombre -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Nombre</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="nombre"
+        aria-required="true"
+        aria-label="Nombre"
+        required
+      />
+      <mat-error *ngIf="registroForm.get('nombre')?.hasError('required')">
+        El nombre es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Apellido Uno -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Primer Apellido</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="apellidouno"
+        aria-required="true"
+        aria-label="Primer apellido"
+        required
+      />
+      <mat-error *ngIf="registroForm.get('apellidouno')?.hasError('required')">
+        El primer apellido es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Apellido Dos -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Segundo Apellido</mat-label>
+      <input
+        matInput
+        type="text"
+        formControlName="apellidodos"
+        aria-label="Segundo apellido"
+      />
+    </mat-form-field>
+
+    <!-- * Password -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+        formControlName="password"
+        aria-required="true"
+        aria-label="Contraseña"
+        autocomplete="new-password"
+        required
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        tabindex="0"
+        type="button"
+        aria-label="Mostrar u ocultar contraseña"
+        (mouseenter)="hidePassword = false"
+        (mouseleave)="hidePassword = true"
+        (focus)="hidePassword = false"
+        (blur)="hidePassword = true"
+      >
+        <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      <mat-error *ngIf="registroForm.get('password')?.hasError('required')">
+        La contraseña es obligatoria.
+      </mat-error>
+      <mat-error *ngIf="registroForm.get('password')?.hasError('minlength')">
+        Mínimo 5 caracteres.
+      </mat-error>
+      <mat-error *ngIf="registroForm.get('password')?.hasError('pattern')">
+        Debe contener al menos una mayúscula, un número y un carácter especial.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Confirmación de Password -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Confirmar Contraseña</mat-label>
+      <input
+        matInput
+        [type]="hidePasswordConfirm ? 'password' : 'text'"
+        formControlName="passwordConfirm"
+        aria-required="true"
+        aria-label="Confirmar contraseña"
+        autocomplete="new-password"
+        required
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        tabindex="0"
+        type="button"
+        aria-label="Mostrar u ocultar confirmación de contraseña"
+        (mouseenter)="hidePasswordConfirm = false"
+        (mouseleave)="hidePasswordConfirm = true"
+        (focus)="hidePasswordConfirm = false"
+        (blur)="hidePasswordConfirm = true"
+      >
+        <mat-icon>{{ hidePasswordConfirm ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      <mat-error *ngIf="registroForm.get('passwordConfirm')?.hasError('required')">
+        La confirmación de contraseña es obligatoria.
+      </mat-error>
+      <mat-error *ngIf="registroForm.hasError('passwordsNoMatch')">
+        Las contraseñas no coinciden.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Mensaje de error general -->
+    <div *ngIf="registroError" class="registro-error" aria-live="assertive">
+      {{ registroError }}
+    </div>
+
+    <!-- * Botones de acción -->
+    <div class="actions" role="group" aria-label="Acciones de registro">
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        (click)="onRegistrar()"
+        [disabled]="registroForm.invalid || !!emailExistsError"
+        aria-label="Registrar usuario"
+      >
+        Registrar
+      </button>
+      <button
+        mat-button
+        type="button"
+        (click)="onVolver()"
+        aria-label="Volver"
+      >
+        Volver
+      </button>
+    </div>
+  </form>
+</div>

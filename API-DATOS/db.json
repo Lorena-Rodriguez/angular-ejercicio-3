@@ -12,7 +12,8 @@
       "email": "juan.perez@example.com",
       "telefonoFijo": "910000001",
       "telefonoMovil": "600000001",
-      "nif": "12345678A"
+      "nif": "12345678A",
+      "id": "88d2"
     },
     {
       "idCliente": "C002",
@@ -26,7 +27,8 @@
       "email": "maria.lopez@example.com",
       "telefonoFijo": "910000002",
       "telefonoMovil": "600000002",
-      "nif": "23456789B"
+      "nif": "23456789B",
+      "id": "1d56"
     },
     {
       "idCliente": "C003",
@@ -40,7 +42,8 @@
       "email": "carlos.garcia@example.com",
       "telefonoFijo": "910000003",
       "telefonoMovil": "600000003",
-      "nif": "34567890C"
+      "nif": "34567890C",
+      "id": "badf"
     },
     {
       "idCliente": "C004",
@@ -54,7 +57,8 @@
       "email": "ana.martin@example.com",
       "telefonoFijo": "910000004",
       "telefonoMovil": "600000004",
-      "nif": "45678901D"
+      "nif": "45678901D",
+      "id": "e724"
     },
     {
       "idCliente": "C005",
@@ -68,7 +72,8 @@
       "email": "luis.hernandez@example.com",
       "telefonoFijo": "910000005",
       "telefonoMovil": "600000005",
-      "nif": "56789012E"
+      "nif": "56789012E",
+      "id": "3915"
     },
     {
       "idCliente": "C006",
@@ -82,7 +87,8 @@
       "email": "laura.torres@example.com",
       "telefonoFijo": "910000006",
       "telefonoMovil": "600000006",
-      "nif": "67890123F"
+      "nif": "67890123F",
+      "id": "32c0"
     },
     {
       "idCliente": "C007",
@@ -96,7 +102,8 @@
       "email": "pedro.ramirez@example.com",
       "telefonoFijo": "910000007",
       "telefonoMovil": "600000007",
-      "nif": "78901234G"
+      "nif": "78901234G",
+      "id": "da1a"
     },
     {
       "idCliente": "C008",
@@ -110,7 +117,8 @@
       "email": "sofia.navarro@example.com",
       "telefonoFijo": "910000008",
       "telefonoMovil": "600000008",
-      "nif": "89012345H"
+      "nif": "89012345H",
+      "id": "5069"
     },
     {
       "idCliente": "C009",
@@ -124,7 +132,8 @@
       "email": "javier.ortega@example.com",
       "telefonoFijo": "910000009",
       "telefonoMovil": "600000009",
-      "nif": "90123456I"
+      "nif": "90123456I",
+      "id": "9930"
     },
     {
       "idCliente": "C010",
@@ -138,7 +147,8 @@
       "email": "elena.dominguez@example.com",
       "telefonoFijo": "910000010",
       "telefonoMovil": "600000010",
-      "nif": "01234567J"
+      "nif": "01234567J",
+      "id": "4df7"
     },
     {
       "idCliente": "C011",
@@ -152,7 +162,8 @@
       "email": "miguel.santos@example.com",
       "telefonoFijo": "910000011",
       "telefonoMovil": "600000011",
-      "nif": "12345678K"
+      "nif": "12345678K",
+      "id": "86fc"
     },
     {
       "idCliente": "C012",
@@ -166,7 +177,8 @@
       "email": "isabel.vargas@example.com",
       "telefonoFijo": "910000012",
       "telefonoMovil": "600000012",
-      "nif": "23456789L"
+      "nif": "23456789L",
+      "id": "7025"
     },
     {
       "idCliente": "C013",
@@ -180,7 +192,8 @@
       "email": "raul.cruz@example.com",
       "telefonoFijo": "910000013",
       "telefonoMovil": "600000013",
-      "nif": "34567890M"
+      "nif": "34567890M",
+      "id": "3409"
     },
     {
       "idCliente": "C014",
@@ -194,7 +207,8 @@
       "email": "carmen.rojas@example.com",
       "telefonoFijo": "910000014",
       "telefonoMovil": "600000014",
-      "nif": "45678901N"
+      "nif": "45678901N",
+      "id": "45fd"
     },
     {
       "idCliente": "C015",
@@ -208,7 +222,8 @@
       "email": "andres.blanco@example.com",
       "telefonoFijo": "910000015",
       "telefonoMovil": "600000015",
-      "nif": "56789012O"
+      "nif": "56789012O",
+      "id": "074e"
     }
   ],
   "productos": [
@@ -220,7 +235,8 @@
       "categoria": "Frutas",
       "precioVenta": 2.5,
       "descuentoVenta": 10,
-      "stock": 100
+      "stock": 100,
+      "id": "e74b"
     },
     {
       "idProducto": "P002",
@@ -230,7 +246,8 @@
       "categoria": "Lácteos",
       "precioVenta": 1.2,
       "descuentoVenta": 5,
-      "stock": 200
+      "stock": 200,
+      "id": "7008"
     },
     {
       "idProducto": "P003",
@@ -238,9 +255,10 @@
       "descripcion": "Pan integral",
       "unidadesMedida": "Unidad",
       "categoria": "Panadería",
-      "precioVenta": 1.0,
+      "precioVenta": 1,
       "descuentoVenta": 0,
-      "stock": 50
+      "stock": 50,
+      "id": "5e67"
     },
     {
       "idProducto": "P004",
@@ -248,9 +266,10 @@
       "descripcion": "Arroz blanco de grano largo",
       "unidadesMedida": "Kilogramo",
       "categoria": "Cereales",
-      "precioVenta": 3.0,
+      "precioVenta": 3,
       "descuentoVenta": 15,
-      "stock": 150
+      "stock": 150,
+      "id": "122a"
     },
     {
       "idProducto": "P005",
@@ -260,7 +279,8 @@
       "categoria": "Aceites",
       "precioVenta": 5.5,
       "descuentoVenta": 20,
-      "stock": 80
+      "stock": 80,
+      "id": "da24"
     },
     {
       "idProducto": "P006",
@@ -268,9 +288,10 @@
       "descripcion": "Queso manchego curado",
       "unidadesMedida": "Kilogramo",
       "categoria": "Lácteos",
-      "precioVenta": 12.0,
+      "precioVenta": 12,
       "descuentoVenta": 10,
-      "stock": 30
+      "stock": 30,
+      "id": "5ca0"
     },
     {
       "idProducto": "P007",
@@ -278,9 +299,10 @@
       "descripcion": "Tomate fresco de huerta",
       "unidadesMedida": "Kilogramo",
       "categoria": "Verduras",
-      "precioVenta": 2.0,
+      "precioVenta": 2,
       "descuentoVenta": 5,
-      "stock": 120
+      "stock": 120,
+      "id": "8a85"
     },
     {
       "idProducto": "P008",
@@ -288,9 +310,10 @@
       "descripcion": "Café molido 100% natural",
       "unidadesMedida": "Kilogramo",
       "categoria": "Bebidas",
-      "precioVenta": 8.0,
+      "precioVenta": 8,
       "descuentoVenta": 10,
-      "stock": 60
+      "stock": 60,
+      "id": "69e8"
     },
     {
       "idProducto": "P009",
@@ -300,7 +323,8 @@
       "categoria": "Dulces",
       "precioVenta": 1.5,
       "descuentoVenta": 0,
-      "stock": 200
+      "stock": 200,
+      "id": "4e4a"
     },
     {
       "idProducto": "P010",
@@ -310,7 +334,8 @@
       "categoria": "Condimentos",
       "precioVenta": 0.8,
       "descuentoVenta": 0,
-      "stock": 300
+      "stock": 300,
+      "id": "88e9"
     },
     {
       "idProducto": "P011",
@@ -320,7 +345,8 @@
       "categoria": "Cereales",
       "precioVenta": 2.2,
       "descuentoVenta": 5,
-      "stock": 100
+      "stock": 100,
+      "id": "b420"
     },
     {
       "idProducto": "P012",
@@ -328,9 +354,10 @@
       "descripcion": "Pollo fresco entero",
       "unidadesMedida": "Kilogramo",
       "categoria": "Carnes",
-      "precioVenta": 6.0,
+      "precioVenta": 6,
       "descuentoVenta": 10,
-      "stock": 50
+      "stock": 50,
+      "id": "0505"
     },
     {
       "idProducto": "P013",
@@ -340,7 +367,8 @@
       "categoria": "Verduras",
       "precioVenta": 1.8,
       "descuentoVenta": 0,
-      "stock": 150
+      "stock": 150,
+      "id": "594e"
     },
     {
       "idProducto": "P014",
@@ -350,7 +378,8 @@
       "categoria": "Lácteos",
       "precioVenta": 0.9,
       "descuentoVenta": 5,
-      "stock": 100
+      "stock": 100,
+      "id": "f2ef"
     },
     {
       "idProducto": "P015",
@@ -360,186 +389,265 @@
       "categoria": "Dulces",
       "precioVenta": 2.5,
       "descuentoVenta": 15,
-      "stock": 80
+      "stock": 80,
+      "id": "a073"
     }
   ],
   "unidadesMedida": [
     {
       "idUnidad": "U001",
-      "descripcion": "Kilogramo"
+      "descripcion": "Kilogramo",
+      "id": "9a16"
     },
     {
       "idUnidad": "U002",
-      "descripcion": "Litro"
+      "descripcion": "Litro",
+      "id": "93d8"
     },
     {
       "idUnidad": "U003",
-      "descripcion": "Unidad"
+      "descripcion": "Unidad",
+      "id": "b67d"
     }
   ],
-
   "categorias": [
     {
       "idCategoria": "C001",
-      "descripcion": "Frutas"
+      "descripcion": "Frutas",
+      "id": "40ca"
     },
     {
       "idCategoria": "C002",
-      "descripcion": "Lácteos"
+      "descripcion": "Lácteos",
+      "id": "a4c4"
     },
     {
       "idCategoria": "C003",
-      "descripcion": "Panadería"
+      "descripcion": "Panadería",
+      "id": "05f3"
     },
     {
       "idCategoria": "C004",
-      "descripcion": "Cereales"
+      "descripcion": "Cereales",
+      "id": "6734"
     },
     {
       "idCategoria": "C005",
-      "descripcion": "Aceites"
+      "descripcion": "Aceites",
+      "id": "3a62"
     },
     {
       "idCategoria": "C006",
-      "descripcion": "Verduras"
+      "descripcion": "Verduras",
+      "id": "add8"
     },
     {
       "idCategoria": "C007",
-      "descripcion": "Bebidas"
+      "descripcion": "Bebidas",
+      "id": "ce9a"
     },
     {
       "idCategoria": "C008",
-      "descripcion": "Dulces"
+      "descripcion": "Dulces",
+      "id": "9cf0"
     },
     {
       "idCategoria": "C009",
-      "descripcion": "Condimentos"
+      "descripcion": "Condimentos",
+      "id": "8cbc"
     },
     {
       "idCategoria": "C010",
-      "descripcion": "Carnes"
+      "descripcion": "Carnes",
+      "id": "ba3a"
     }
   ],
   "poblaciones": [
     {
       "codigoPostal": "28001",
       "provincia": "Madrid",
-      "poblacion": "Madrid"
+      "poblacion": "Madrid",
+      "id": "36b0"
     },
     {
       "codigoPostal": "29002",
       "provincia": "Málaga",
-      "poblacion": "Málaga"
+      "poblacion": "Málaga",
+      "id": "1ecb"
     },
     {
       "codigoPostal": "41003",
       "provincia": "Sevilla",
-      "poblacion": "Sevilla"
+      "poblacion": "Sevilla",
+      "id": "4498"
     },
     {
       "codigoPostal": "46004",
       "provincia": "Valencia",
-      "poblacion": "Valencia"
+      "poblacion": "Valencia",
+      "id": "078e"
     },
     {
       "codigoPostal": "50005",
       "provincia": "Zaragoza",
-      "poblacion": "Zaragoza"
+      "poblacion": "Zaragoza",
+      "id": "a6bd"
     },
     {
       "codigoPostal": "33006",
       "provincia": "Asturias",
-      "poblacion": "Oviedo"
+      "poblacion": "Oviedo",
+      "id": "13cb"
     },
     {
       "codigoPostal": "35007",
       "provincia": "Las Palmas",
-      "poblacion": "Las Palmas"
+      "poblacion": "Las Palmas",
+      "id": "9830"
     },
     {
       "codigoPostal": "07008",
       "provincia": "Baleares",
-      "poblacion": "Palma"
+      "poblacion": "Palma",
+      "id": "e42a"
     },
     {
       "codigoPostal": "08009",
       "provincia": "Barcelona",
-      "poblacion": "Barcelona"
+      "poblacion": "Barcelona",
+      "id": "e389"
     },
     {
       "codigoPostal": "15010",
       "provincia": "A Coruña",
-      "poblacion": "A Coruña"
+      "poblacion": "A Coruña",
+      "id": "ab3c"
     },
     {
       "codigoPostal": "26011",
       "provincia": "La Rioja",
-      "poblacion": "Logroño"
+      "poblacion": "Logroño",
+      "id": "10f7"
     },
     {
       "codigoPostal": "31012",
       "provincia": "Navarra",
-      "poblacion": "Pamplona"
+      "poblacion": "Pamplona",
+      "id": "5319"
     },
     {
       "codigoPostal": "32013",
       "provincia": "Ourense",
-      "poblacion": "Ourense"
+      "poblacion": "Ourense",
+      "id": "d100"
     },
     {
       "codigoPostal": "33014",
       "provincia": "Asturias",
-      "poblacion": "Gijón"
+      "poblacion": "Gijón",
+      "id": "b44a"
     },
     {
       "codigoPostal": "34015",
       "provincia": "Palencia",
-      "poblacion": "Palencia"
+      "poblacion": "Palencia",
+      "id": "5123"
     },
     {
       "codigoPostal": "28002",
       "provincia": "Madrid",
-      "poblacion": "Alcalá de Henares"
+      "poblacion": "Alcalá de Henares",
+      "id": "d481"
     },
     {
       "codigoPostal": "28003",
       "provincia": "Madrid",
-      "poblacion": "Móstoles"
+      "poblacion": "Móstoles",
+      "id": "f4a3"
     },
     {
       "codigoPostal": "28004",
       "provincia": "Madrid",
-      "poblacion": "Fuenlabrada"
+      "poblacion": "Fuenlabrada",
+      "id": "1403"
     },
     {
       "codigoPostal": "28005",
       "provincia": "Madrid",
-      "poblacion": "Leganés"
+      "poblacion": "Leganés",
+      "id": "fb4e"
     },
     {
       "codigoPostal": "28006",
       "provincia": "Madrid",
-      "poblacion": "Getafe"
+      "poblacion": "Getafe",
+      "id": "9728"
     },
     {
       "codigoPostal": "28007",
       "provincia": "Madrid",
-      "poblacion": "Alcorcón"
+      "poblacion": "Alcorcón",
+      "id": "48e3"
     },
     {
       "codigoPostal": "28008",
       "provincia": "Madrid",
-      "poblacion": "Torrejón de Ardoz"
+      "poblacion": "Torrejón de Ardoz",
+      "id": "c0b5"
     },
     {
       "codigoPostal": "28009",
       "provincia": "Madrid",
-      "poblacion": "Parla"
+      "poblacion": "Parla",
+      "id": "1679"
     },
     {
       "codigoPostal": "28010",
       "provincia": "Madrid",
-      "poblacion": "Coslada"
+      "poblacion": "Coslada",
+      "id": "22b8"
+    }
+  ],
+  "usuarios": [
+    {
+      "email": "juan.perez@email.com",
+      "nombre": "Juan",
+      "apellidouno": "Pérez",
+      "apellidodos": "García",
+      "password": "123456",
+      "id": "b4e4"
+    },
+    {
+      "email": "maria.lopez@email.com",
+      "nombre": "María",
+      "apellidouno": "López",
+      "apellidodos": "Martínez",
+      "password": "abcdef",
+      "id": "720a"
+    },
+    {
+      "email": "carlos.sanchez@email.com",
+      "nombre": "Carlos",
+      "apellidouno": "Sánchez",
+      "apellidodos": "Ruiz",
+      "password": "qwerty",
+      "id": "2616"
+    },
+    {
+      "id": "e44e",
+      "email": "carlos.castro@outlook.es",
+      "password": "C@rlos",
+      "nombre": "Nuevo",
+      "apellidouno": "",
+      "apellidodos": ""
+    },
+    {
+      "id": "0224",
+      "email": "carlos@prueba.com",
+      "nombre": "Carlos",
+      "apellidouno": "Castro",
+      "apellidodos": "Diaz",
+      "password": "C@rl0s"
     }
   ]
 }

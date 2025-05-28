@@ -1,11 +1,69 @@
-<!-- home.component.html -->
-<mat-toolbar color="primary" class="mat-elevation-z4" style="position: sticky; top: 0; z-index: 100;">
-  <span style="font-weight: bold; font-size: 1.3rem; letter-spacing: 1px;">Mi Aplicación</span>
+<mat-toolbar
+  color="primary"
+  class="main-toolbar mat-elevation-z4"
+  role="navigation"
+  aria-label="Menú principal"
+>
+  <!-- * Muestra el usuario logado a la izquierda si existe -->
+  <span *ngIf="usuarioLogado" class="user-info" aria-label="Usuario logado">
+    👤 {{ usuarioLogado.nombre }} {{ usuarioLogado.apellidouno }} {{ usuarioLogado.apellidodos }}
+  </span>
+  <span class="app-title" aria-label="Nombre de la aplicación">Mi Aplicación</span>
   <span class="spacer"></span>
-  <button mat-button routerLink="/clientes" routerLinkActive="active-link">Clientes</button>
-  <button mat-button routerLink="/productos" routerLinkActive="active-link">Productos</button>
-  <button mat-button routerLink="/login" routerLinkActive="active-link">Login</button>
-  <button mat-raised-button color="accent" (click)="logout()">Salir</button>
+
+  <nav aria-label="Opciones principales">
+    <ul class="menu-list" role="menubar">
+      <li role="none">
+        <a
+          mat-button
+          routerLink="/clientes"
+          routerLinkActive="active-link"
+          [attr.aria-disabled]="!usuarioLogado"
+          [tabindex]="!usuarioLogado ? -1 : 0"
+          aria-label="Clientes"
+          role="menuitem"
+        >
+          Clientes
+        </a>
+      </li>
+      <li role="none">
+        <a
+          mat-button
+          routerLink="/productos"
+          routerLinkActive="active-link"
+          [attr.aria-disabled]="!usuarioLogado"
+          [tabindex]="!usuarioLogado ? -1 : 0"
+          aria-label="Productos"
+          role="menuitem"
+        >
+          Productos
+        </a>
+      </li>
+      <li role="none">
+        <a
+          mat-button
+          href="#"
+          (click)="abrirLoginModal(); $event.preventDefault()"
+          aria-label="Login"
+          [attr.aria-current]="!usuarioLogado ? 'page' : null"
+          role="menuitem"
+        >
+          Login
+        </a>
+      </li>
+      <li role="none">
+        <a
+          mat-button
+          href="#"
+          (click)="salir(); $event.preventDefault()"
+          aria-label="Salir"
+          role="menuitem"
+        >
+          Salir
+        </a>
+      </li>
+    </ul>
+  </nav>
 </mat-toolbar>
 
 <router-outlet></router-outlet>

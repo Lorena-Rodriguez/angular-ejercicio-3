@@ -1,0 +1,92 @@
+<div class="auth-container" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+  <h2 id="auth-title">Acceso de Usuario</h2>
+  <form [formGroup]="authForm" (ngSubmit)="onLogin()" autocomplete="off" novalidate>
+    <!-- * Campo Email -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input
+        matInput
+        type="email"
+        formControlName="email"
+        aria-required="true"
+        aria-label="Correo electrónico"
+        autocomplete="username"
+        required
+      />
+      <mat-error *ngIf="authForm.get('email')?.hasError('required')">
+        El email es obligatorio.
+      </mat-error>
+      <mat-error *ngIf="authForm.get('email')?.hasError('email')">
+        Introduce un email válido.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Campo Password con icono de ojo para mostrar/ocultar -->
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input
+        matInput
+        [type]="hidePassword ? 'password' : 'text'"
+        formControlName="password"
+        aria-required="true"
+        aria-label="Contraseña"
+        autocomplete="current-password"
+        required
+      />
+      <button
+        mat-icon-button
+        matSuffix
+        tabindex="0"
+        type="button"
+        aria-label="Mostrar u ocultar contraseña"
+        (mouseenter)="hidePassword = false"
+        (mouseleave)="hidePassword = true"
+        (focus)="hidePassword = false"
+        (blur)="hidePassword = true"
+      >
+        <mat-icon>{{ hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      <mat-error *ngIf="authForm.get('password')?.hasError('required')">
+        La contraseña es obligatoria.
+      </mat-error>
+      <mat-error *ngIf="authForm.get('password')?.hasError('minlength')">
+        Mínimo 6 caracteres.
+      </mat-error>
+    </mat-form-field>
+
+    <!-- * Mensaje de error de login -->
+    <div *ngIf="loginError" class="login-error" aria-live="assertive">
+      {{ loginError }}
+    </div>
+
+    <!-- * Botones de acción -->
+    <div class="actions" role="group" aria-label="Acciones de autenticación">
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+        [disabled]="authForm.invalid"
+        aria-label="Iniciar sesión"
+      >
+        Login
+      </button>
+      <button
+        mat-stroked-button
+        color="accent"
+        type="button"
+        (click)="abrirRegistroModal()"
+        aria-label="Registrarse"
+      >
+        Registro
+      </button>
+      <button
+        mat-button
+        type="button"
+        (click)="onVolver()"
+        aria-label="Volver"
+      >
+        Volver
+      </button>
+    </div>
+  </form>
+</div>
