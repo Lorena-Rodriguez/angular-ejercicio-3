@@ -1,0 +1,134 @@
+DOCUMENTACIÓN DEL MODELO DE DATOS - db.json
+
+===========================================================
+1. DESCRIPCIÓN GENERAL
+===========================================================
+El archivo db.json es la base de datos simulada utilizada por json-server para proporcionar una API REST local. Contiene varias colecciones (tablas) en formato JSON. Cada colección es un array de objetos con una estructura definida según la entidad que representa.
+
+===========================================================
+2. COLECCIÓN: usuarios
+===========================================================
+Cada objeto representa un usuario registrado en la aplicación.
+
+Campos:
+- id: Identificador único (numérico o string, generado por json-server si no se especifica).
+- email: Email único del usuario (string, requerido).
+- nombre: Nombre del usuario (string, requerido).
+- apellidouno: Primer apellido (string, requerido).
+- apellidodos: Segundo apellido (string, opcional).
+- password: Contraseña del usuario (string, requerido, en texto plano para pruebas).
+
+Ejemplo:
+{
+  "id": 1,
+  "email": "usuario@dominio.com",
+  "nombre": "Juan",
+  "apellidouno": "Pérez",
+  "apellidodos": "García",
+  "password": "Password123!"
+}
+
+===========================================================
+3. COLECCIÓN: poblaciones
+===========================================================
+Cada objeto representa una población o localidad.
+
+Campos:
+- id: Identificador único de la población (string).
+- codigoPostal: Código postal (string).
+- provincia: Provincia (string).
+- poblacion: Nombre de la población (string).
+
+Ejemplo:
+{
+  "id": "b44a",
+  "codigoPostal": "33014",
+  "provincia": "Asturias",
+  "poblacion": "Gijón"
+}
+
+===========================================================
+4. OTRAS COLECCIONES (EJEMPLO: clientes, productos)
+===========================================================
+Si existen otras colecciones como "clientes" o "productos", su estructura será similar: un array de objetos con campos específicos para cada entidad.
+
+Ejemplo para clientes:
+{
+  "id": 1,
+  "nombre": "Empresa S.A.",
+  "cif": "A12345678",
+  "direccion": "Calle Mayor, 1",
+  "poblacion": "Madrid",
+  "provincia": "Madrid",
+  "codigoPostal": "28001"
+}
+
+Ejemplo para productos:
+{
+  "id": 1,
+  "nombre": "Producto A",
+  "descripcion": "Descripción del producto",
+  "precio": 19.99,
+  "stock": 100
+}
+
+===========================================================
+5. RELACIONES Y CONSULTAS
+===========================================================
+- No existen relaciones directas entre colecciones (no hay claves foráneas).
+- json-server permite realizar búsquedas y filtrados por cualquier campo usando parámetros de consulta en la URL.
+  Ejemplo: GET /usuarios?email=usuario@dominio.com
+- El campo "id" es único en cada colección y puede ser numérico o string.
+
+===========================================================
+6. EJEMPLO DE db.json COMPLETO
+===========================================================
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "email": "juan.perez@email.com",
+      "nombre": "Juan",
+      "apellidouno": "Pérez",
+      "apellidodos": "García",
+      "password": "Password123!"
+    }
+  ],
+  "poblaciones": [
+    {
+      "id": "b44a",
+      "codigoPostal": "33014",
+      "provincia": "Asturias",
+      "poblacion": "Gijón"
+    }
+  ],
+  "clientes": [
+    {
+      "id": 1,
+      "nombre": "Empresa S.A.",
+      "cif": "A12345678",
+      "direccion": "Calle Mayor, 1",
+      "poblacion": "Madrid",
+      "provincia": "Madrid",
+      "codigoPostal": "28001"
+    }
+  ],
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Producto A",
+      "descripcion": "Descripción del producto",
+      "precio": 19.99,
+      "stock": 100
+    }
+  ]
+}
+
+===========================================================
+7. NOTAS
+===========================================================
+- Puedes añadir más colecciones según las necesidades del proyecto.
+- json-server asigna automáticamente el campo "id" si no se especifica.
+- Para producción, nunca almacenar contraseñas en texto plano.
+- Para consultar usuarios por email: GET /usuarios?email=usuario@dominio.com
+- Para consultar poblaciones por provincia: GET /poblaciones?provincia=Asturias
