@@ -17,7 +17,7 @@ export class ClientesService {
   }
 
   // Obtener un cliente por su ID
-  getCliente(id: number): Observable<iCliente> {
+  getCliente(id: string): Observable<iCliente> {
     return this.http.get<iCliente>(`${this.apiUrl}/${id}`);
   }
 
@@ -27,12 +27,12 @@ export class ClientesService {
   }
 
   // Actualizar un cliente existente
-  updateCliente(id: number, cliente: iCliente): Observable<iCliente> {
+  updateCliente(id: string, cliente: iCliente): Observable<iCliente> {
     return this.http.put<iCliente>(`${this.apiUrl}/${id}`, cliente);
   }
 
   // Eliminar un cliente por su ID
-  deleteCliente(id: number): Observable<void> {
+  deleteCliente(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }

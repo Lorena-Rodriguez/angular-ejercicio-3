@@ -1,5 +1,5 @@
 export interface iCliente {
-  id: number;
+  idCliente: string;
   nombre: string;
   apellidoUno: string;
   apellidoDos: string;
@@ -10,7 +10,8 @@ export interface iCliente {
   email: string;
   telefonoFijo: string;
   telefonoMovil: string;
-  NIF: string;
+  nif: string;
+  id: string;
 }
 
 
