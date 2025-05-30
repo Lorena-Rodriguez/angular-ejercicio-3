@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ClientesService } from '../clientes/clientes.service';
 import { iCliente } from '../clientes/clientes.interface';
+import { PoblacionService } from '../poblacion/poblacion.service'; // Asegúrate de que la ruta sea correcta
+import { iPoblaciones } from '../poblacion/poblacion.interface';
 
 @Component({
   selector: 'app-datos-cliente',
@@ -27,15 +29,24 @@ export class DatosClienteComponent implements OnInit {
     id: ''
   };
   clienteExistente = false;
+console: any;
 
   constructor(
     private clientesService: ClientesService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private poblacionService: PoblacionService
   ) {}
 
   ngOnInit(): void {
     const idCliente = this.route.snapshot.paramMap.get('idCliente'); // 🔹 Captura el ID desde la URL
+
+    // Prueba manual para obtener poblaciones por código postal QUITAR DESPUÉS DE LAS PRUEBAS
+      this.poblacionService.getPoblacionesPorCodigoPostal('28008').subscribe(
+    (poblaciones) => console.log('Prueba manual: ', poblaciones),
+    (error) => console.error('Error en prueba manual:', error)
+  );
+
 
     if (idCliente) {
       this.clientesService.getCliente(idCliente).subscribe(
@@ -115,6 +126,57 @@ guardar(): void {
     });
   }
 }
+
+// actualizarProvincia(): void {
+//   if (this.cliente.codigoPostal.length === 5) { // ✅ Solo busca si hay 5 caracteres
+//     this.poblacionService.getProvinciaPorCodigoPostal(this.cliente.codigoPostal).subscribe(
+//       (poblaciones) => {
+//         if (poblaciones.length > 0) {
+//           this.cliente.provincia = poblaciones[0].provincia; // ✅ Asigna la provincia encontrada
+//         } else {
+//           this.cliente.provincia = ''; // 🔹 Vacía el campo si no hay coincidencias
+//         }
+//       }
+//     );
+//   }
+// }
+
+actualizarProvincia(): void {
+  if (this.cliente.codigoPostal.length === 5) {  
+    this.poblacionService.getProvinciaPorCodigoPostal(this.cliente.codigoPostal).subscribe(
+      (poblaciones) => {
+        console.log('Datos obtenidos de la API para provincia:', poblaciones); // ✅ Verifica los datos
+        if (poblaciones.length > 0) {
+          this.cliente.provincia = poblaciones[0].provincia;
+        } else {
+          this.cliente.provincia = ''; // 🔹 Si no hay coincidencias, deja vacío
+        }
+        console.log('Provincia asignada:', this.cliente.provincia);
+      }
+    );
+  }
+}
+
+poblacionesDisponibles: iPoblaciones[] = []; // 🔹 Almacena las poblaciones disponibles
+
+actualizarPoblaciones(): void {
+  if (this.cliente.codigoPostal.length === 5) {  
+    this.poblacionService.getPoblacionesPorCodigoPostal(this.cliente.codigoPostal).subscribe(
+      (poblaciones) => {
+        console.log('Datos obtenidos de la API para poblaciones:', poblaciones); // ✅ Verifica los datos
+        this.poblacionesDisponibles = poblaciones;
+        console.log('Lista de poblaciones disponibles después de asignar:', this.poblacionesDisponibles);
+      },
+      (error) => console.error('Error al buscar poblaciones:', error)
+    );
+  }
+}
+
+
+
+
+
+
 
 
 }
