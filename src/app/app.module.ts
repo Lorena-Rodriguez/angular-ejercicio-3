@@ -15,13 +15,17 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog'; // <-- Añade esta línea
 import { HttpClientModule } from '@angular/common/http';
 import { UsuariosRegistroComponent } from './usuarios/usuarios-registro/usuarios-registro.component';
+import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
+import { DatosClienteComponent } from './datos-cliente/datos-cliente.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     UsuariosAuthComponent,
-    UsuariosRegistroComponent
+    UsuariosRegistroComponent,
+    ListadoClientesComponent,
+    DatosClienteComponent
   ],
   imports: [
     BrowserModule,
