@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let cliente of clientes">
+    <tr *ngFor="let cliente of clientes" (dblclick)="editarCliente(cliente.idCliente)" >
       <td>{{ cliente.id }}</td>
       <td>{{ cliente.nombre }}</td>
       <td>{{ cliente.apellidoUno }}</td>

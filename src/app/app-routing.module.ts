@@ -9,6 +9,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: UsuariosAuthComponent },
   { path: 'clientes', component: ListadoClientesComponent },
+  { path: 'datos-cliente/:idCliente', component: DatosClienteComponent },
   { path: 'datos-cliente', component: DatosClienteComponent }, // <-- Añade esta línea
   // ...otras rutas...
 ];

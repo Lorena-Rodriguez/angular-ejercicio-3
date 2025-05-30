@@ -35,14 +35,44 @@ export class DatosClienteComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.clientesService.getCliente(id).subscribe((data) => {
-        this.cliente = data;
-        this.clienteExistente = true;
-      });
+    const idCliente = this.route.snapshot.paramMap.get('idCliente'); // 🔹 Captura el ID desde la URL
+
+    if (idCliente) {
+      this.clientesService.getCliente(idCliente).subscribe(
+        (clientes) => {
+          if (clientes.length > 0) {
+            this.cliente = clientes[0]; // ✅ Asigna el primer cliente encontrado
+            this.clienteExistente = true;
+          } else {
+            alert('Cliente no encontrado');
+            this.router.navigate(['/clientes']); // 🔹 Redirige si el cliente no existe
+          }
+        },
+        (error) => {
+          console.error('Error obteniendo el cliente:', error);
+          alert('Ocurrió un error al cargar el cliente.');
+        }
+      );
+    } else {
+      this.clienteExistente = false;
+      this.cliente = {
+        idCliente: '',
+        nombre: '',
+        apellidoUno: '',
+        apellidoDos: '',
+        direccion: '',
+        codigoPostal: '',
+        provincia: '',
+        poblacion: '',
+        email: '',
+        telefonoFijo: '',
+        telefonoMovil: '',
+        nif: '',
+        id: ''
+      };
     }
   }
+
 
   volver(): void {
     if (this.clienteExistente) {

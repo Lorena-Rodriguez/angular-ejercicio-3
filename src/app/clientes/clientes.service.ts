@@ -17,9 +17,11 @@ export class ClientesService {
   }
 
   // Obtener un cliente por su ID
-  getCliente(id: string): Observable<iCliente> {
-    return this.http.get<iCliente>(`${this.apiUrl}/${id}`);
-  }
+getCliente(idCliente: string): Observable<iCliente[]> { 
+  return this.http.get<iCliente[]>(`${this.apiUrl}?idCliente=${idCliente}`); // ✅ Filtra por idCliente
+}
+
+
 
   // Agregar un nuevo cliente
   addCliente(cliente: iCliente): Observable<iCliente> {

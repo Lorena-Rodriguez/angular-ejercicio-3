@@ -31,4 +31,9 @@ export class ListadoClientesComponent implements OnInit {
   volver(): void {
     this.router.navigate(['/']); // Vuelve a la pantalla anterior
   }
+
+  editarCliente(idCliente: string): void {
+    this.router.navigate(['/datos-cliente', idCliente]); // Navega a datos-cliente con el ID seleccionado
+  }
+
 }
