@@ -95,18 +95,26 @@ export class DatosClienteComponent implements OnInit {
   }
 
 guardar(): void {
-  if (!this.cliente.idCliente) {
-    this.cliente.idCliente = 'C' + Math.floor(Math.random() * 1000);  // ✅ Generación de IDCliente único
-  }
+  if (this.clienteExistente) {  // 🔹 Si el cliente ya existe, lo actualizamos
+    this.clientesService.updateCliente(this.cliente.id, this.cliente).subscribe(() => {
+      alert('Cliente actualizado correctamente');
+      this.router.navigate(['/clientes']);
+    });
+  } else {  // 🔹 Si es un cliente nuevo, lo agregamos
+    if (!this.cliente.idCliente) {
+      this.cliente.idCliente = 'C' + Math.floor(Math.random() * 1000);
+    }
 
-  if (!this.cliente.id) {
-    this.cliente.id = Math.random().toString(36).substring(2, 6); // ✅ Generación de ID único tipo string
-  }
+    if (!this.cliente.id) {
+      this.cliente.id = Math.random().toString(36).substring(2, 6);
+    }
 
-  this.clientesService.addCliente(this.cliente).subscribe(() => {
-    alert('Cliente creado correctamente');
-    this.router.navigate(['/clientes']);
-  });
+    this.clientesService.addCliente(this.cliente).subscribe(() => {
+      alert('Cliente creado correctamente');
+      this.router.navigate(['/clientes']);
+    });
+  }
 }
+
 
 }
