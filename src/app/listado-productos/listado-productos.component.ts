@@ -28,7 +28,7 @@ export class ListadoProductosComponent implements OnInit {
     this.router.navigate(['/datos-producto', producto.id]); // Usa producto.id
   }
 
-  crearProducto(): void {
+  btncrearProducto(): void {
     this.router.navigate(['/datos-producto']);
   }
 

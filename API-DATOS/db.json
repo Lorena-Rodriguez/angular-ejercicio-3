@@ -408,48 +408,15 @@
       "id": "a073"
     },
     {
-      "id": "d64a",
-      "idProducto": "",
       "nombre": "Fresas",
-      "descripcion": "Fresas silvestres",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Frutas",
-      "precioVenta": 2,
-      "descuentoVenta": 10,
-      "stock": 50
-    },
-    {
-      "id": "0e0c",
-      "idProducto": "P016",
-      "nombre": "Fresitas",
       "descripcion": "fresas silvestres",
       "unidadesMedida": "Kilogramo",
       "categoria": "Frutas",
       "precioVenta": 2,
       "descuentoVenta": 10,
-      "stock": 50
-    },
-    {
-      "id": "85dd",
-      "nombre": "Limón",
-      "descripcion": "limones andaluces",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Verduras",
-      "precioVenta": 20,
-      "descuentoVenta": 5,
-      "stock": 30,
-      "idProducto": null
-    },
-    {
-      "id": "5682",
-      "nombre": "Naranjitas chinas",
-      "descripcion": "naranjitas de la china",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Frutas",
-      "precioVenta": 25,
-      "descuentoVenta": 10,
-      "stock": 300,
-      "idProducto": "P017"
+      "stock": 50,
+      "idProducto": "P016",
+      "id": "0e0c"
     }
   ],
   "unidadesMedida": [

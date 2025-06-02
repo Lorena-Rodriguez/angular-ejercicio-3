@@ -25,7 +25,7 @@
 
   <button type="submit">Guardar</button>
   <button type="button" (click)="volverListadoProductos()">Cancelar</button>
-  <button *ngIf="idProducto" type="button" (click)="eliminarProducto()" class="btn-eliminar">
+  <button *ngIf="id" type="button" (click)="eliminarProducto()">
     Eliminar Producto
   </button>
 </form>
