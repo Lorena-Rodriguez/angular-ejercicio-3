@@ -20,7 +20,7 @@ export class ProductosService {
     return this.http.get<iProducto[]>(this.apiUrlProductos);
   }
 
-  getProducto(id: number): Observable<iProducto> {
+  getProducto(id: string): Observable<iProducto> {
     return this.http.get<iProducto>(`${this.apiUrlProductos}/${id}`);
   }
 
@@ -28,15 +28,15 @@ export class ProductosService {
     return this.http.post<iProducto>(this.apiUrlProductos, producto);
   }
 
-  updateProducto(id: number, producto: iProducto): Observable<iProducto> {
+  updateProducto(id: string, producto: iProducto): Observable<iProducto> {
     return this.http.put<iProducto>(`${this.apiUrlProductos}/${id}`, producto);
   }
 
-  deleteProducto(id: number): Observable<void> {
+  deleteProducto(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrlProductos}/${id}`);
   }
 
-  // 🔹 Métodos para categorías
+  // Métodos para categorías
   getCategorias(): Observable<iCategorias[]> {
     return this.http.get<iCategorias[]>(this.apiUrlCategorias);
   }
@@ -45,7 +45,7 @@ export class ProductosService {
     return this.http.get<iCategorias>(`${this.apiUrlCategorias}/${id}`);
   }
 
-  // 🔹 Métodos para unidades de medida
+  // Métodos para unidades de medida
   getUnidadesMedida(): Observable<iUnidadesMedida[]> {
     return this.http.get<iUnidadesMedida[]>(this.apiUrlUnidadesMedida);
   }

@@ -1,1 +1,32 @@
-<p>datos-producto works!</p>
+
+
+<form [formGroup]="formularioProducto" (ngSubmit)="guardarProducto()">
+
+  <label for="nombre">Nombre:</label>
+  <input id="nombre" formControlName="nombre" type="text" required />
+
+  <label for="descripcion">Descripción:</label>
+  <textarea id="descripcion" formControlName="descripcion"></textarea>
+
+  <label for="unidadesMedida">Unidades de Medida:</label>
+  <input id="unidadesMedida" formControlName="unidadesMedida" type="text" required />
+
+  <label for="categoria">Categoría:</label>
+  <input id="categoria" formControlName="categoria" type="text" required />
+
+  <label for="precioVenta">Precio Venta:</label>
+  <input id="precioVenta" formControlName="precioVenta" type="number" required />
+
+  <label for="descuentoVenta">Descuento (%):</label>
+  <input id="descuentoVenta" formControlName="descuentoVenta" type="number" min="0" max="100" />
+
+  <label for="stock">Stock:</label>
+  <input id="stock" formControlName="stock" type="number" required />
+
+  <button type="submit">Guardar</button>
+  <button type="button" (click)="volverListadoProductos()">Cancelar</button>
+  <button *ngIf="idProducto" type="button" (click)="eliminarProducto()" class="btn-eliminar">
+    Eliminar Producto
+  </button>
+</form>
+

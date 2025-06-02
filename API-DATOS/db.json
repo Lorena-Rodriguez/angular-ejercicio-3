@@ -243,7 +243,7 @@
   ],
   "productos": [
     {
-      "idProducto": "P001",
+      "idProducto": "e74b",
       "nombre": "Manzana",
       "descripcion": "Manzana roja fresca",
       "unidadesMedida": "Kilogramo",
@@ -254,69 +254,69 @@
       "id": "e74b"
     },
     {
-      "idProducto": "P002",
-      "nombre": "Leche",
+      "nombre": "Leche fresca",
       "descripcion": "Leche entera pasteurizada",
       "unidadesMedida": "Litro",
       "categoria": "Lácteos",
       "precioVenta": 1.2,
       "descuentoVenta": 5,
       "stock": 200,
+      "idProducto": "7008",
       "id": "7008"
     },
     {
-      "idProducto": "P003",
-      "nombre": "Pan",
+      "nombre": "Pan fresco",
       "descripcion": "Pan integral",
       "unidadesMedida": "Unidad",
       "categoria": "Panadería",
       "precioVenta": 1,
       "descuentoVenta": 0,
       "stock": 50,
+      "idProducto": "5e67",
       "id": "5e67"
     },
     {
-      "idProducto": "P004",
-      "nombre": "Arroz",
+      "nombre": "Arroz blanco",
       "descripcion": "Arroz blanco de grano largo",
       "unidadesMedida": "Kilogramo",
       "categoria": "Cereales",
       "precioVenta": 3,
       "descuentoVenta": 15,
       "stock": 150,
+      "idProducto": "122a",
       "id": "122a"
     },
     {
-      "idProducto": "P005",
-      "nombre": "Aceite de Oliva",
+      "nombre": "AOVE",
       "descripcion": "Aceite de oliva virgen extra",
       "unidadesMedida": "Litro",
       "categoria": "Aceites",
       "precioVenta": 5.5,
       "descuentoVenta": 20,
       "stock": 80,
+      "idProducto": "da24",
       "id": "da24"
     },
     {
-      "idProducto": "P006",
-      "nombre": "Queso",
+      "nombre": "Queso viejo",
       "descripcion": "Queso manchego curado",
       "unidadesMedida": "Kilogramo",
       "categoria": "Lácteos",
       "precioVenta": 12,
       "descuentoVenta": 10,
       "stock": 30,
+      "idProducto": "5ca0",
       "id": "5ca0"
     },
     {
-      "idProducto": "P007",
-      "nombre": "Tomate",
+      "nombre": "Tomate pera",
       "descripcion": "Tomate fresco de huerta",
       "unidadesMedida": "Kilogramo",
       "categoria": "Verduras",
       "precioVenta": 2,
       "descuentoVenta": 5,
       "stock": 120,
+      "idProducto": "8a85",
       "id": "8a85"
     },
     {
@@ -331,19 +331,19 @@
       "id": "69e8"
     },
     {
-      "idProducto": "P009",
-      "nombre": "Azúcar",
+      "nombre": "Azúcar blanca",
       "descripcion": "Azúcar blanca refinada",
       "unidadesMedida": "Kilogramo",
       "categoria": "Dulces",
       "precioVenta": 1.5,
       "descuentoVenta": 0,
       "stock": 200,
+      "idProducto": "4e4a",
       "id": "4e4a"
     },
     {
-      "idProducto": "P010",
-      "nombre": "Sal",
+      "idProducto": "88e9",
+      "nombre": "Sal de mesa",
       "descripcion": "Sal marina fina",
       "unidadesMedida": "Kilogramo",
       "categoria": "Condimentos",
@@ -353,7 +353,6 @@
       "id": "88e9"
     },
     {
-      "idProducto": "P011",
       "nombre": "Pasta",
       "descripcion": "Pasta tipo espagueti",
       "unidadesMedida": "Kilogramo",
@@ -361,6 +360,7 @@
       "precioVenta": 2.2,
       "descuentoVenta": 5,
       "stock": 100,
+      "idProducto": "P011",
       "id": "b420"
     },
     {
@@ -406,6 +406,50 @@
       "descuentoVenta": 15,
       "stock": 80,
       "id": "a073"
+    },
+    {
+      "id": "d64a",
+      "idProducto": "",
+      "nombre": "Fresas",
+      "descripcion": "Fresas silvestres",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Frutas",
+      "precioVenta": 2,
+      "descuentoVenta": 10,
+      "stock": 50
+    },
+    {
+      "id": "0e0c",
+      "idProducto": "P016",
+      "nombre": "Fresitas",
+      "descripcion": "fresas silvestres",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Frutas",
+      "precioVenta": 2,
+      "descuentoVenta": 10,
+      "stock": 50
+    },
+    {
+      "id": "85dd",
+      "nombre": "Limón",
+      "descripcion": "limones andaluces",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Verduras",
+      "precioVenta": 20,
+      "descuentoVenta": 5,
+      "stock": 30,
+      "idProducto": null
+    },
+    {
+      "id": "5682",
+      "nombre": "Naranjitas chinas",
+      "descripcion": "naranjitas de la china",
+      "unidadesMedida": "Kilogramo",
+      "categoria": "Frutas",
+      "precioVenta": 25,
+      "descuentoVenta": 10,
+      "stock": 300,
+      "idProducto": "P017"
     }
   ],
   "unidadesMedida": [
