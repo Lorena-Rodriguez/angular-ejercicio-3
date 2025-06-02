@@ -29,10 +29,21 @@
 
 
     <label for="email">Email:</label>
-    <input type="email" id="email" [(ngModel)]="cliente.email" name="email" required>
+    <input type="email" id="email" [(ngModel)]="cliente.email" name="email" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}">
+    <span *ngIf="!cliente.email" class="error">El email es obligatorio.</span>
+    <span *ngIf="cliente.email && cliente.email.indexOf('&#64;') === -1" class="error">El email debe incluir una '&#64;'.</span>
+    <span *ngIf="cliente.email && cliente.email.indexOf('.') === -1" class="error">El email debe incluir un dominio.</span>
 
-    <label for="telefonoFijo">Teléfono Fijo:</label>
-    <input type="tel" id="telefonoFijo" [(ngModel)]="cliente.telefonoFijo" name="telefonoFijo">
+    <label for="telefonoFijo">Teléfono fijo:</label>
+    <input type="text" id="telefonoFijo" [(ngModel)]="cliente.telefonoFijo" name="telefonoFijo" pattern="[0-9]{1,6}" maxlength="6">
+    <span *ngIf="cliente.telefonoFijo && cliente.telefonoFijo.length > 6" class="error">
+    El teléfono fijo debe tener como máximo 6 caracteres numéricos.
+    </span>
+    <span *ngIf="cliente.telefonoFijo && !cliente.telefonoFijo.match('[0-9]{1,6}') " class="error">
+    Solo se permiten números en el teléfono fijo.
+    </span>
+
+
 
     <label for="telefonoMovil">Teléfono Móvil:</label>
     <input type="tel" id="telefonoMovil" [(ngModel)]="cliente.telefonoMovil" name="telefonoMovil" >

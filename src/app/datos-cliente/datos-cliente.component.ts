@@ -52,11 +52,12 @@ console: any;
       this.clientesService.getCliente(idCliente).subscribe(
         (clientes) => {
           if (clientes.length > 0) {
-            this.cliente = clientes[0]; // ✅ Asigna el primer cliente encontrado
+            this.cliente = clientes[0]; // Asigna el primer cliente encontrado
+            //  console.log('Cliente cargado:', this.cliente);
             this.clienteExistente = true;
           } else {
             alert('Cliente no encontrado');
-            this.router.navigate(['/clientes']); // 🔹 Redirige si el cliente no existe
+            this.router.navigate(['/clientes']); // Redirige si el cliente no existe
           }
         },
         (error) => {
