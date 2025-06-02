@@ -17,7 +17,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsuariosRegistroComponent } from './usuarios/usuarios-registro/usuarios-registro.component';
 import { ListadoClientesComponent } from './listado-clientes/listado-clientes.component';
 import { DatosClienteComponent } from './datos-cliente/datos-cliente.component';
-import { PoblacionService } from './poblacion/poblacion.service'; // Asegúrate de que la ruta sea correcta
+import { PoblacionService } from './poblacion/poblacion.service';
+import { ListadoProductosComponent } from './listado-productos/listado-productos.component';
+import { DatosProductoComponent } from './datos-producto/datos-producto.component'; // Asegúrate de que la ruta sea correcta
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { PoblacionService } from './poblacion/poblacion.service'; // Asegúrate 
     UsuariosAuthComponent,
     UsuariosRegistroComponent,
     ListadoClientesComponent,
-    DatosClienteComponent
+    DatosClienteComponent,
+    ListadoProductosComponent,
+    DatosProductoComponent
   ],
   imports: [
     BrowserModule,
