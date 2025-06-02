@@ -1,6 +1,6 @@
 
 
-<form [formGroup]="formularioProducto" (ngSubmit)="guardarProducto()">
+<form *ngIf="formularioProducto" [formGroup]="formularioProducto" (ngSubmit)="guardarProducto()">
 
   <label for="nombre">Nombre:</label>
   <input id="nombre" formControlName="nombre" type="text" required />

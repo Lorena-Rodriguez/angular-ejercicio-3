@@ -428,6 +428,17 @@
       "descuentoVenta": 0.5,
       "stock": "30",
       "idProducto": "P017"
+    },
+    {
+      "id": "67b6",
+      "nombre": "albaricoque",
+      "descripcion": "rojos como el sol",
+      "unidadesMedida": "U001",
+      "categoria": "C001",
+      "precioVenta": "2.36",
+      "descuentoVenta": 10,
+      "stock": "200",
+      "idProducto": "P018"
     }
   ],
   "unidadesMedida": [

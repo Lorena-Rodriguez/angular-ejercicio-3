@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductosService } from '../productos/productos.service';
 import { iProducto } from '../productos/productos.interface';
-
+import { forkJoin } from 'rxjs';
 
 @Component({
   selector: 'app-datos-producto',
@@ -26,22 +26,21 @@ export class DatosProductoComponent implements OnInit {
 ngOnInit(): void {
   this.id = this.route.snapshot.paramMap.get('id');
 
-  // Cargar unidades de medida desde la API
-  this.productosService.getUnidadesMedida().subscribe((unidades) => {
+  forkJoin({
+    unidades: this.productosService.getUnidadesMedida(),
+    categorias: this.productosService.getCategorias()
+  }).subscribe(({ unidades, categorias }) => {
     this.unidadesMedidaDisponibles = unidades.map(u => ({ idUnidad: u.idUnidad, descripcion: u.descripcion }));
-  });
-
-  // Cargar categorías desde la API
-  this.productosService.getCategorias().subscribe((categorias) => {
     this.categoriasDisponibles = categorias.map(c => ({ idCategoria: c.idCategoria, descripcion: c.descripcion }));
+
+    this.inicializarFormulario();
+
+    if (this.id) {
+      this.cargarProducto(this.id);
+    }
   });
-
-  this.inicializarFormulario();
-
-  if (this.id) {
-    this.cargarProducto(this.id);
-  }
 }
+
 
 
 
@@ -71,17 +70,31 @@ ngOnInit(): void {
   }
 
 
-  cargarProducto(id: string): void {
-    this.productosService.getProducto(id).subscribe((producto) => {
-      if (producto) {
-        console.log('Producto obtenido:', producto);
-        this.formularioProducto.patchValue(producto);
+cargarProducto(id: string): void {
+  this.productosService.getProducto(id).subscribe((producto) => {
+    if (producto) {
+      console.log('Producto obtenido:', producto);
 
-        // Selecciona automáticamente la unidad de medida en el combo
-        this.formularioProducto.get('unidadesMedida')?.setValue(producto.unidadesMedida);
+      this.formularioProducto.patchValue(producto);
+
+      // 🔹 Seleccionar la unidad de medida correcta por descripción
+      const unidadSeleccionada = this.unidadesMedidaDisponibles.find(u => u.descripcion === producto.unidadesMedida);
+      console.log('Unidad seleccionada en lista:', unidadSeleccionada);
+      if (unidadSeleccionada) {
+        this.formularioProducto.get('unidadesMedida')?.setValue(unidadSeleccionada.idUnidad);
       }
-    });
-  }
+
+      // 🔹 Seleccionar la categoría correcta por descripción
+      const categoriaSeleccionada = this.categoriasDisponibles.find(c => c.descripcion === producto.categoria);
+      console.log('Categoría seleccionada en lista:', categoriaSeleccionada);
+      if (categoriaSeleccionada) {
+        this.formularioProducto.get('categoria')?.setValue(categoriaSeleccionada.idCategoria);
+      }
+    }
+  });
+}
+
+
 
 
   guardarProducto(): void {
@@ -130,4 +143,7 @@ ngOnInit(): void {
   volverListadoProductos(): void {
     this.router.navigate(['/productos']);
   }
+
+
+
 }

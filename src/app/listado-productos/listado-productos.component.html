@@ -15,8 +15,8 @@
       <td>{{ producto.idProducto }}</td>
       <td>{{ producto.nombre }}</td>
       <td>{{ producto.descripcion }}</td>
-      <td>{{ producto.unidadesMedida }}</td>
-      <td>{{ producto.categoria }}</td>
+      <td>{{ getDescripcionUnidad(producto.unidadesMedida) }}</td>
+<td>{{ getDescripcionCategoria(producto.categoria) }}</td>
     </tr>
   </tbody>
 </table>
