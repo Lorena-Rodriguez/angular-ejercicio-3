@@ -1,1 +1,28 @@
-<p>listado-productos works!</p>
+<h2>Listado de Productos</h2>
+
+
+
+<table>
+  <thead>
+    <tr>
+      <th>ID Producto</th>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Unidades de Medida</th>
+      <th>Categoría</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let producto of productos" (dblclick)="editarProducto(producto)">
+      <td>{{ producto.idProducto }}</td>
+      <td>{{ producto.nombre }}</td>
+      <td>{{ producto.descripcion }}</td>
+      <td>{{ producto.unidadesMedida }}</td>
+      <td>{{ producto.categoria }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button id="btnCrearProducto" (click)="crearProducto()">Crear Producto</button>
+<button id="btnVolver" (click)="volverPaginaPrincipal()">Volver</button>
+

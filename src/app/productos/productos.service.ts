@@ -15,7 +15,7 @@ export class ProductosService {
 
   constructor(private http: HttpClient) {}
 
-  // 🔹 Métodos para productos
+  // Métodos para productos
   getProductos(): Observable<iProducto[]> {
     return this.http.get<iProducto[]>(this.apiUrlProductos);
   }

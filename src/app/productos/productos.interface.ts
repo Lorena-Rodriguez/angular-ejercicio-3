@@ -1,8 +1,11 @@
 export interface iProducto {
-  id: number;
+  idProducto: number;
   nombre: string;
   descripcion: string;
-  precio: number;
+  unidadesMedida: string;
+  categoria: string;
+  precioVenta: number;
+  descuentoVenta: number;
   stock: number;
 }
 
