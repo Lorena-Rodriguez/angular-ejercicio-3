@@ -37,7 +37,7 @@ export class DatosProductoComponent implements OnInit {
     this.formularioProducto = this.fb.group({
       idProducto: [{ value: this.idProducto, disabled: true }],
       nombre: ['', Validators.required],
-      descripcion: [''],
+      descripcion: ['', Validators.required],
       unidadesMedida: ['', Validators.required],
       categoria: ['', Validators.required],
       precioVenta: [0, [Validators.required, Validators.min(0)]],
