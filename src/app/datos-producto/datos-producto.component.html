@@ -9,22 +9,49 @@
   <textarea id="descripcion" formControlName="descripcion"></textarea>
 
   <label for="unidadesMedida">Unidades de Medida:</label>
-  <input id="unidadesMedida" formControlName="unidadesMedida" type="text" required />
+  <select id="unidadesMedida" formControlName="unidadesMedida" required>
+    <option *ngFor="let unidad of unidadesMedidaDisponibles" [value]="unidad">
+      {{ unidad }}
+    </option>
+  </select>
+
 
   <label for="categoria">Categoría:</label>
-  <input id="categoria" formControlName="categoria" type="text" required />
+  <select id="categoria" formControlName="categoria" required>
+    <option value="">Seleccione una categoría</option>
+    <option *ngFor="let cat of categoriasDisponibles" [value]="cat.descripcion">
+      {{ cat.descripcion }}
+    </option>
+  </select>
+  <span *ngIf="formularioProducto.get('categoria')?.invalid && formularioProducto.get('categoria')?.touched" class="error">
+    La categoría es obligatoria.
+  </span>
 
   <label for="precioVenta">Precio Venta:</label>
-  <input id="precioVenta" formControlName="precioVenta" type="number" required />
+  <input id="precioVenta" formControlName="precioVenta" type="text" required />
+
+  <span *ngIf="formularioProducto.get('precioVenta')?.invalid && formularioProducto.get('precioVenta')?.dirty">
+    El precio debe ser un número con hasta dos decimales.
+  </span>
 
   <label for="descuentoVenta">Descuento (%):</label>
   <input id="descuentoVenta" formControlName="descuentoVenta" type="number" min="0" max="100" />
 
+  <span *ngIf="formularioProducto.get('descuentoVenta')?.invalid && formularioProducto.get('descuentoVenta')?.dirty">
+    El descuento debe estar entre 0 y 100%.
+  </span>
+
+
   <label for="stock">Stock:</label>
-  <input id="stock" formControlName="stock" type="number" required />
+  <input id="stock" formControlName="stock" type="text" required />
+
+  <span *ngIf="formularioProducto.get('stock')?.invalid && formularioProducto.get('stock')?.dirty">
+    El stock debe ser un número entero y no puede estar vacío.
+  </span>
+
 
   <button type="submit">Guardar</button>
-  <button type="button" (click)="volverListadoProductos()">Cancelar</button>
+  <button type="button" (click)="volverListadoProductos()">Volver</button>
   <button *ngIf="id" type="button" (click)="eliminarProducto()">
     Eliminar Producto
   </button>

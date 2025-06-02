@@ -24,7 +24,11 @@ export class DatosProductoComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id'); // Solo el id interno
+    this.id = this.route.snapshot.paramMap.get('id');
+
+    this.productosService.getCategorias().subscribe((categorias) => {
+      this.categoriasDisponibles = categorias.map(c => ({ idCategoria: c.idCategoria, descripcion: c.descripcion }));
+    });
 
     this.inicializarFormulario();
 
@@ -33,26 +37,43 @@ export class DatosProductoComponent implements OnInit {
     }
   }
 
+  // Lista de unidades de medida disponibles
+  unidadesMedidaDisponibles: string[] = ['Kilogramo', 'Litro', 'Unidad']; 
+
+  // Lista de categorías disponibles
+  categoriasDisponibles: { idCategoria: string; descripcion: string }[] = [];
+
+
   inicializarFormulario(): void {
     this.formularioProducto = this.fb.group({
-      idProducto: [{ value: this.idProducto, disabled: true }],
       nombre: ['', Validators.required],
       descripcion: ['', Validators.required],
-      unidadesMedida: ['', Validators.required],
+      unidadesMedida: ['', Validators.required], // Campo select con validación
       categoria: ['', Validators.required],
-      precioVenta: [0, [Validators.required, Validators.min(0)]],
-      descuentoVenta: [0, [Validators.min(0), Validators.max(100)]],
-      stock: [0, Validators.required]
+      precioVenta: ['', [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
+      descuentoVenta: ['', [Validators.min(0), Validators.max(100)]],
+      stock: ['', [Validators.required, Validators.pattern(/^\d+$/)]]
     });
+
+    // Si ya existe un valor de unidades de medida, lo establece en el formulario
+    if (this.formularioProducto.get('unidadesMedida')?.value) {
+      this.formularioProducto.get('unidadesMedida')?.setValue(this.formularioProducto.get('unidadesMedida')?.value);
+    }
   }
+
 
   cargarProducto(id: string): void {
     this.productosService.getProducto(id).subscribe((producto) => {
       if (producto) {
+        console.log('Producto obtenido:', producto);
         this.formularioProducto.patchValue(producto);
+
+        // Selecciona automáticamente la unidad de medida en el combo
+        this.formularioProducto.get('unidadesMedida')?.setValue(producto.unidadesMedida);
       }
     });
   }
+
 
   guardarProducto(): void {
     if (this.formularioProducto.valid) {
