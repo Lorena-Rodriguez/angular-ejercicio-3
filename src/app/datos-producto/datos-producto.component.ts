@@ -23,22 +23,25 @@ export class DatosProductoComponent implements OnInit {
     private productosService: ProductosService
   ) {}
 
-  ngOnInit(): void {
-    this.id = this.route.snapshot.paramMap.get('id');
+ngOnInit(): void {
+  this.id = this.route.snapshot.paramMap.get('id');
 
-    this.productosService.getCategorias().subscribe((categorias) => {
-      this.categoriasDisponibles = categorias.map(c => ({ idCategoria: c.idCategoria, descripcion: c.descripcion }));
-    });
+  // Cargar unidades de medida desde la API
+  this.productosService.getUnidadesMedida().subscribe((unidades) => {
+    this.unidadesMedidaDisponibles = unidades.map(u => ({ idUnidad: u.idUnidad, descripcion: u.descripcion }));
+  });
 
-    this.inicializarFormulario();
+  this.inicializarFormulario();
 
-    if (this.id) {
-      this.cargarProducto(this.id);
-    }
+  if (this.id) {
+    this.cargarProducto(this.id);
   }
+}
+
 
   // Lista de unidades de medida disponibles
-  unidadesMedidaDisponibles: string[] = ['Kilogramo', 'Litro', 'Unidad']; 
+  unidadesMedidaDisponibles: { idUnidad: string; descripcion: string }[] = [];
+
 
   // Lista de categorías disponibles
   categoriasDisponibles: { idCategoria: string; descripcion: string }[] = [];

@@ -8,12 +8,13 @@
   <label for="descripcion">Descripción:</label>
   <textarea id="descripcion" formControlName="descripcion"></textarea>
 
-  <label for="unidadesMedida">Unidades de Medida:</label>
-  <select id="unidadesMedida" formControlName="unidadesMedida" required>
-    <option *ngFor="let unidad of unidadesMedidaDisponibles" [value]="unidad">
-      {{ unidad }}
-    </option>
-  </select>
+<label for="unidadesMedida">Unidades de Medida:</label>
+<select id="unidadesMedida" formControlName="unidadesMedida" required>
+  <option *ngFor="let unidad of unidadesMedidaDisponibles" [value]="unidad.idUnidad">
+    {{ unidad.descripcion }}
+  </option>
+</select>
+
 
 
   <label for="categoria">Categoría:</label>
