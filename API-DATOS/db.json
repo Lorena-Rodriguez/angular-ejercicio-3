@@ -417,6 +417,17 @@
       "stock": 50,
       "idProducto": "P016",
       "id": "0e0c"
+    },
+    {
+      "id": "4310",
+      "nombre": "Rollo de canela",
+      "descripcion": "Rollo de canela con nueces",
+      "unidadesMedida": "U003",
+      "categoria": "C003",
+      "precioVenta": "3",
+      "descuentoVenta": 0.5,
+      "stock": "30",
+      "idProducto": "P017"
     }
   ],
   "unidadesMedida": [

@@ -15,18 +15,13 @@
   </option>
 </select>
 
-
-
   <label for="categoria">Categoría:</label>
   <select id="categoria" formControlName="categoria" required>
-    <option value="">Seleccione una categoría</option>
-    <option *ngFor="let cat of categoriasDisponibles" [value]="cat.descripcion">
-      {{ cat.descripcion }}
+    <option *ngFor="let categoria of categoriasDisponibles" [value]="categoria.idCategoria">
+      {{ categoria.descripcion }}
     </option>
   </select>
-  <span *ngIf="formularioProducto.get('categoria')?.invalid && formularioProducto.get('categoria')?.touched" class="error">
-    La categoría es obligatoria.
-  </span>
+
 
   <label for="precioVenta">Precio Venta:</label>
   <input id="precioVenta" formControlName="precioVenta" type="text" required />

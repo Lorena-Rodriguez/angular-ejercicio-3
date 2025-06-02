@@ -31,12 +31,18 @@ ngOnInit(): void {
     this.unidadesMedidaDisponibles = unidades.map(u => ({ idUnidad: u.idUnidad, descripcion: u.descripcion }));
   });
 
+  // Cargar categorías desde la API
+  this.productosService.getCategorias().subscribe((categorias) => {
+    this.categoriasDisponibles = categorias.map(c => ({ idCategoria: c.idCategoria, descripcion: c.descripcion }));
+  });
+
   this.inicializarFormulario();
 
   if (this.id) {
     this.cargarProducto(this.id);
   }
 }
+
 
 
   // Lista de unidades de medida disponibles

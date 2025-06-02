@@ -10,7 +10,7 @@ import { iUnidadesMedida } from '../unidadesMedida/unidadesMedida.interface';
 })
 export class ProductosService {
   private apiUrlProductos = 'http://localhost:3000/productos';
-  private apiUrlCategorias = 'http://localhost:3000/categorías';
+  private apiUrlCategorias = 'http://localhost:3000/categorias';
   private apiUrlUnidadesMedida = 'http://localhost:3000/unidadesMedida';
 
   constructor(private http: HttpClient) {}
