@@ -45,8 +45,17 @@
 
 
 
-    <label for="telefonoMovil">Teléfono Móvil:</label>
-    <input type="tel" id="telefonoMovil" [(ngModel)]="cliente.telefonoMovil" name="telefonoMovil" >
+    <label for="telefonoMovil">Teléfono móvil:</label>
+    <input type="text" id="telefonoMovil" [(ngModel)]="cliente.telefonoMovil" name="telefonoMovil" pattern="[0-9]{1,6}" maxlength="6">
+    <span *ngIf="!cliente.telefonoFijo && !cliente.telefonoMovil" class="error">
+    Debes ingresar un teléfono móvil si el fijo está vacío.
+    </span>
+    <span *ngIf="cliente.telefonoMovil && cliente.telefonoMovil.length > 6" class="error">
+    El teléfono móvil debe tener como máximo 6 caracteres numéricos.
+    </span>
+    <span *ngIf="cliente.telefonoMovil && cliente.telefonoMovil.match('[^0-9]')" class="error">
+    Solo se permiten números en el teléfono móvil.
+    </span>
 
     <label for="nif">NIF:</label>
     <input type="text" id="nif" [(ngModel)]="cliente.nif" name="nif" required>
