@@ -16,14 +16,17 @@ export class ProductosService {
   constructor(private http: HttpClient) {}
 
   // Métodos para productos
+  // Obtiene todos los productos
   getProductos(): Observable<iProducto[]> {
     return this.http.get<iProducto[]>(this.apiUrlProductos);
   }
 
+  // Obtiene un producto por su ID
   getProducto(id: string): Observable<iProducto> {
     return this.http.get<iProducto>(`${this.apiUrlProductos}/${id}`);
   }
 
+  // Métodos para añadir, actualizar y eliminar productos
   addProducto(producto: iProducto): Observable<iProducto> {
     return this.http.post<iProducto>(this.apiUrlProductos, producto);
   }
@@ -41,6 +44,7 @@ export class ProductosService {
     return this.http.get<iCategorias[]>(this.apiUrlCategorias);
   }
 
+  // Obtiene una categoría por su ID
   getCategoria(id: string): Observable<iCategorias> {
     return this.http.get<iCategorias>(`${this.apiUrlCategorias}/${id}`);
   }
@@ -50,6 +54,7 @@ export class ProductosService {
     return this.http.get<iUnidadesMedida[]>(this.apiUrlUnidadesMedida);
   }
 
+  // Obtiene una unidad de medida por su ID
   getUnidadMedida(id: string): Observable<iUnidadesMedida> {
     return this.http.get<iUnidadesMedida>(`${this.apiUrlUnidadesMedida}/${id}`);
   }

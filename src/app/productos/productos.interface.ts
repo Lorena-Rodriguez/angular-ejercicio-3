@@ -1,6 +1,6 @@
 export interface iProducto {
-  id?: number | string;        // ID interno para json-server (puede ser number o string)
-  idProducto: string;          // Identificador del Producto (P001, P002, etc.)
+  id?: number | string;        
+  idProducto: string;         
   nombre: string;
   descripcion: string;
   unidadesMedida: string;

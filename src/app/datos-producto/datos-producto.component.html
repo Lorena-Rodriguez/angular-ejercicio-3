@@ -1,6 +1,7 @@
+<h1>Formulario de Productos</h1>
 
-
-<form *ngIf="formularioProducto" [formGroup]="formularioProducto" (ngSubmit)="guardarProducto()">
+<!-- Formulario para editar o crear un producto -->
+<form *ngIf="formularioProducto" [formGroup]="formularioProducto" (ngSubmit)="guardarProducto()"> 
 
   <label for="nombre">Nombre:</label>
   <input id="nombre" formControlName="nombre" type="text" required />
@@ -53,3 +54,4 @@
   </button>
 </form>
 
+<!--Fin formulario-->

@@ -12,6 +12,7 @@ import { iPoblaciones } from '../poblacion/poblacion.interface';
   styleUrls: ['./datos-cliente.component.css']
 })
 
+// Componente para gestionar los datos de un cliente
 export class DatosClienteComponent implements OnInit {
   cliente: iCliente = {
     idCliente: '',
@@ -31,6 +32,7 @@ export class DatosClienteComponent implements OnInit {
   clienteExistente = false;
 console: any;
 
+// Se inyectan los servicios necesarios
   constructor(
     private clientesService: ClientesService,
     private router: Router,
@@ -38,23 +40,27 @@ console: any;
     private poblacionService: PoblacionService
   ) {}
 
+  // Método que se ejecuta al inicializar el componente
   ngOnInit(): void {
-    const idCliente = this.route.snapshot.paramMap.get('idCliente'); // 🔹 Captura el ID desde la URL
+    const idCliente = this.route.snapshot.paramMap.get('idCliente'); // Captura el ID desde la URL
 
-    // Prueba manual para obtener poblaciones por código postal QUITAR DESPUÉS DE LAS PRUEBAS
-      this.poblacionService.getPoblacionesPorCodigoPostal('28008').subscribe(
-    (poblaciones) => console.log('Prueba manual: ', poblaciones),
-    (error) => console.error('Error en prueba manual:', error)
-  );
+    // Prueba manual para obtener poblaciones por código postal (tras varios intentos y errores, lo dejo por aquí por si acaso).
+  //     this.poblacionService.getPoblacionesPorCodigoPostal('28008').subscribe(
+  //   (poblaciones) => console.log('Prueba manual: ', poblaciones),
+  //   (error) => console.error('Error en prueba manual:', error)
+  // );
 
-
+    // Si hay un ID de cliente en la URL, se carga el cliente correspondiente
     if (idCliente) {
       this.clientesService.getCliente(idCliente).subscribe(
         (clientes) => {
           if (clientes.length > 0) {
             this.cliente = clientes[0]; // Asigna el primer cliente encontrado
-            //  console.log('Cliente cargado:', this.cliente);
-            this.clienteExistente = true;
+            this.clienteExistente = true; // Marca que el cliente ya existe
+            // Añade esta línea:
+            if (this.cliente.codigoPostal && this.cliente.codigoPostal.length === 5) { // Verifica que el código postal tenga 5 dígitos
+              this.actualizarPoblaciones();
+            }
           } else {
             alert('Cliente no encontrado');
             this.router.navigate(['/clientes']); // Redirige si el cliente no existe
@@ -66,7 +72,8 @@ console: any;
         }
       );
     } else {
-      this.clienteExistente = false;
+      this.clienteExistente = false; // Marca que no existe un cliente previo
+      // Si no hay ID, inicializa un cliente vacío
       this.cliente = {
         idCliente: '',
         nombre: '',
@@ -85,7 +92,8 @@ console: any;
     }
   }
 
-
+  // Métodos para manejar las acciones del componente
+  // Método para volver a la lista de clientes
   volver(): void {
     if (this.clienteExistente) {
       const confirmacion = confirm('¿Seguro que deseas volver sin guardar cambios?');
@@ -94,6 +102,7 @@ console: any;
     this.router.navigate(['/clientes']);
   }
 
+  // Método para borrar un cliente
   borrar(): void {
     if (this.clienteExistente) {
       const confirmacion = confirm('¿Seguro que deseas borrar este cliente?');
@@ -106,13 +115,14 @@ console: any;
     }
   }
 
+  // Método para guardar un cliente
 guardar(): void {
-  if (this.clienteExistente) {  // 🔹 Si el cliente ya existe, lo actualizamos
+  if (this.clienteExistente) {  // Si el cliente ya existe, lo actualizamos
     this.clientesService.updateCliente(this.cliente.id, this.cliente).subscribe(() => {
       alert('Cliente actualizado correctamente');
       this.router.navigate(['/clientes']);
     });
-  } else {  // 🔹 Si es un cliente nuevo, lo agregamos
+  } else {  // Si es un cliente nuevo, lo agregamos
     if (!this.cliente.idCliente) {
       this.cliente.idCliente = 'C' + Math.floor(Math.random() * 1000);
     }
@@ -128,43 +138,31 @@ guardar(): void {
   }
 }
 
-// actualizarProvincia(): void {
-//   if (this.cliente.codigoPostal.length === 5) { // ✅ Solo busca si hay 5 caracteres
-//     this.poblacionService.getProvinciaPorCodigoPostal(this.cliente.codigoPostal).subscribe(
-//       (poblaciones) => {
-//         if (poblaciones.length > 0) {
-//           this.cliente.provincia = poblaciones[0].provincia; // ✅ Asigna la provincia encontrada
-//         } else {
-//           this.cliente.provincia = ''; // 🔹 Vacía el campo si no hay coincidencias
-//         }
-//       }
-//     );
-//   }
-// }
-
-actualizarProvincia(): void {
-  if (this.cliente.codigoPostal.length === 5) {  
-    this.poblacionService.getProvinciaPorCodigoPostal(this.cliente.codigoPostal).subscribe(
-      (poblaciones) => {
-        console.log('Datos obtenidos de la API para provincia:', poblaciones); // ✅ Verifica los datos
-        if (poblaciones.length > 0) {
-          this.cliente.provincia = poblaciones[0].provincia;
-        } else {
-          this.cliente.provincia = ''; // 🔹 Si no hay coincidencias, deja vacío
+  // Método para actualizar la provincia según el código postal
+  actualizarProvincia(): void {
+    if (this.cliente.codigoPostal.length === 5) {  
+      this.poblacionService.getProvinciaPorCodigoPostal(this.cliente.codigoPostal).subscribe(
+        (poblaciones) => {
+          console.log('Datos obtenidos de la API para provincia:', poblaciones); // Verifica los datos
+          if (poblaciones.length > 0) {
+            this.cliente.provincia = poblaciones[0].provincia;
+          } else {
+            this.cliente.provincia = ''; // Si no hay coincidencias, deja vacío
+          }
+          console.log('Provincia asignada:', this.cliente.provincia);
         }
-        console.log('Provincia asignada:', this.cliente.provincia);
-      }
-    );
+      );
+    }
   }
-}
 
-poblacionesDisponibles: iPoblaciones[] = []; // 🔹 Almacena las poblaciones disponibles
+poblacionesDisponibles: iPoblaciones[] = []; // Almacena las poblaciones disponibles
 
+  // Método para actualizar las poblaciones disponibles según el código postal
 actualizarPoblaciones(): void {
   if (this.cliente.codigoPostal.length === 5) {  
     this.poblacionService.getPoblacionesPorCodigoPostal(this.cliente.codigoPostal).subscribe(
       (poblaciones) => {
-        console.log('Datos obtenidos de la API para poblaciones:', poblaciones); // ✅ Verifica los datos
+        console.log('Datos obtenidos de la API para poblaciones:', poblaciones); 
         this.poblacionesDisponibles = poblaciones;
         console.log('Lista de poblaciones disponibles después de asignar:', this.poblacionesDisponibles);
       },
@@ -172,12 +170,4 @@ actualizarPoblaciones(): void {
     );
   }
 }
-
-
-
-
-
-
-
-
 }
