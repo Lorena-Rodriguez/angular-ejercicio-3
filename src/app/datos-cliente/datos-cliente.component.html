@@ -55,7 +55,10 @@
     </span>
 
     <label for="nif">NIF:</label>
-    <input type="text" id="nif" [(ngModel)]="cliente.nif" name="nif" required>
+    <input type="text" id="nif" [(ngModel)]="cliente.nif" name="nif" required maxlength="9">
+    <span *ngIf="cliente.nif && !esNifValido(cliente.nif)">
+    El NIF no es válido.
+    </span>
 
     <div class="buttons">
         <button type="button" (click)="volver()">Volver</button>

@@ -44,12 +44,6 @@ console: any;
   ngOnInit(): void {
     const idCliente = this.route.snapshot.paramMap.get('idCliente'); // Captura el ID desde la URL
 
-    // Prueba manual para obtener poblaciones por código postal (tras varios intentos y errores, lo dejo por aquí por si acaso).
-  //     this.poblacionService.getPoblacionesPorCodigoPostal('28008').subscribe(
-  //   (poblaciones) => console.log('Prueba manual: ', poblaciones),
-  //   (error) => console.error('Error en prueba manual:', error)
-  // );
-
     // Si hay un ID de cliente en la URL, se carga el cliente correspondiente
     if (idCliente) {
       this.clientesService.getCliente(idCliente).subscribe(
@@ -169,5 +163,16 @@ actualizarPoblaciones(): void {
       (error) => console.error('Error al buscar poblaciones:', error)
     );
   }
+}
+
+//Validación del NIF
+esNifValido(nif: string): boolean {
+  if (!nif) return false; // Verifica que el NIF no esté vacío
+  const nifPattern = /^[0-9]{8}[A-Za-z]$/; // Expresión regular para validar el formato del NIF
+  if (!nifPattern.test(nif)) return false; // Verifica que el NIF tenga 8 dígitos seguidos de una letra
+  const letras = 'TRWAGMYFPDXBNJZSQVHLCKE'; // Letras válidas para el NIF español
+  const numero = parseInt(nif.substring(0, 8), 10); // Extrae los primeros 8 dígitos del NIF
+  const letra = nif.charAt(8).toUpperCase(); // Extrae la letra del NIF y la convierte a mayúsculas
+  return letras.charAt(numero % 23) === letra; // Compara la letra calculada con la del NIF
 }
 }
