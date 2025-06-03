@@ -73,6 +73,7 @@ ngOnInit(): void {
 cargarProducto(id: string): void {
   this.productosService.getProducto(id).subscribe((producto) => {
     if (producto) {
+      this.idProducto = producto.idProducto; // Guardar el idProducto para uso posterior
       console.log('Producto obtenido:', producto);
 
       this.formularioProducto.patchValue(producto);
@@ -95,54 +96,74 @@ cargarProducto(id: string): void {
 }
 
 
+guardarProducto(): void {
+  if (this.formularioProducto.valid) {
+    if (this.id) {
+      // 🔹 Asegurar que `idProducto` se mantiene correctamente
+      const productoEditado = {
+        ...this.formularioProducto.value,
+        idProducto: this.idProducto ?? this.formularioProducto.get('idProducto')?.value
+      };
 
+      this.productosService.updateProducto(this.id, productoEditado).subscribe(() => {
+        alert('Se han guardado los cambios correctamente.');
+        this.router.navigate(['/productos']);
+      });
+    } else {
+      // 🔹 Crear producto nuevo
+      this.productosService.getProductos().subscribe(productos => {
+        const ids = productos
+          .map(p => p.idProducto)
+          .filter(id => /^P\d+$/.test(id))
+          .map(id => parseInt(id.substring(1), 10));
+        const max = ids.length > 0 ? Math.max(...ids) : 0;
+        const nuevoIdProducto = 'P' + (max + 1).toString().padStart(3, '0');
 
-  guardarProducto(): void {
-    if (this.formularioProducto.valid) {
-      if (this.id) {
-        // Editar producto existente
-        const productoEditado = {
+        const productoNuevo = {
           ...this.formularioProducto.value,
-          idProducto: this.formularioProducto.get('idProducto')?.value
+          idProducto: nuevoIdProducto
         };
-        this.productosService.updateProducto(this.id, productoEditado).subscribe(() => {
+
+        this.productosService.addProducto(productoNuevo).subscribe(() => {
+          alert('Producto creado correctamente.');
           this.router.navigate(['/productos']);
         });
-      } else {
-        // Crear producto nuevo: calcular el siguiente idProducto
-        this.productosService.getProductos().subscribe(productos => {
-          // Filtra solo los que tienen idProducto en formato PXXX
-          const ids = productos
-            .map(p => p.idProducto)
-            .filter(id => /^P\d+$/.test(id))
-            .map(id => parseInt(id.substring(1), 10));
-          const max = ids.length > 0 ? Math.max(...ids) : 0;
-          const nuevoIdProducto = 'P' + (max + 1).toString().padStart(3, '0');
-
-          const productoNuevo = {
-            ...this.formularioProducto.value,
-            idProducto: nuevoIdProducto
-          };
-
-          this.productosService.addProducto(productoNuevo).subscribe(() => {
-            this.router.navigate(['/productos']);
-          });
-        });
-      }
+      });
     }
   }
+}
 
-  eliminarProducto(): void {
-    if (this.id) {
+
+eliminarProducto(): void {
+  if (this.id) {
+    // Mostrar confirmación antes de eliminar
+    const confirmacion = window.confirm('¿Estás seguro de que deseas eliminar este producto?');
+    
+    if (confirmacion) {
       this.productosService.deleteProducto(this.id).subscribe(() => {
+        // Mostrar mensaje de éxito
+        alert('Producto eliminado correctamente.');
         this.router.navigate(['/productos']);
       });
     }
   }
+}
 
-  volverListadoProductos(): void {
+
+volverListadoProductos(): void {
+  if (this.formularioProducto.dirty) {
+    // Si hay cambios, simplemente volvemos
     this.router.navigate(['/productos']);
+  } else {
+    // Si NO hay cambios, mostramos la alerta
+    const confirmacion = window.confirm('¿Seguro que quiere volver a Inicio sin modificar nada?');
+    
+    if (confirmacion) {
+      this.router.navigate(['/productos']);
+    }
   }
+}
+
 
 
 

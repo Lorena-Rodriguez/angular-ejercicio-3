@@ -243,83 +243,6 @@
   ],
   "productos": [
     {
-      "idProducto": "e74b",
-      "nombre": "Manzana",
-      "descripcion": "Manzana roja fresca",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Frutas",
-      "precioVenta": 2.5,
-      "descuentoVenta": 10,
-      "stock": 100,
-      "id": "e74b"
-    },
-    {
-      "nombre": "Leche fresca",
-      "descripcion": "Leche entera pasteurizada",
-      "unidadesMedida": "Litro",
-      "categoria": "Lácteos",
-      "precioVenta": 1.2,
-      "descuentoVenta": 5,
-      "stock": 200,
-      "idProducto": "7008",
-      "id": "7008"
-    },
-    {
-      "nombre": "Pan fresco",
-      "descripcion": "Pan integral",
-      "unidadesMedida": "Unidad",
-      "categoria": "Panadería",
-      "precioVenta": 1,
-      "descuentoVenta": 0,
-      "stock": 50,
-      "idProducto": "5e67",
-      "id": "5e67"
-    },
-    {
-      "nombre": "Arroz blanco",
-      "descripcion": "Arroz blanco de grano largo",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Cereales",
-      "precioVenta": 3,
-      "descuentoVenta": 15,
-      "stock": 150,
-      "idProducto": "122a",
-      "id": "122a"
-    },
-    {
-      "nombre": "AOVE",
-      "descripcion": "Aceite de oliva virgen extra",
-      "unidadesMedida": "Litro",
-      "categoria": "Aceites",
-      "precioVenta": 5.5,
-      "descuentoVenta": 20,
-      "stock": 80,
-      "idProducto": "da24",
-      "id": "da24"
-    },
-    {
-      "nombre": "Queso viejo",
-      "descripcion": "Queso manchego curado",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Lácteos",
-      "precioVenta": 12,
-      "descuentoVenta": 10,
-      "stock": 30,
-      "idProducto": "5ca0",
-      "id": "5ca0"
-    },
-    {
-      "nombre": "Tomate pera",
-      "descripcion": "Tomate fresco de huerta",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Verduras",
-      "precioVenta": 2,
-      "descuentoVenta": 5,
-      "stock": 120,
-      "idProducto": "8a85",
-      "id": "8a85"
-    },
-    {
       "idProducto": "P008",
       "nombre": "Café",
       "descripcion": "Café molido 100% natural",
@@ -329,28 +252,6 @@
       "descuentoVenta": 10,
       "stock": 60,
       "id": "69e8"
-    },
-    {
-      "nombre": "Azúcar blanca",
-      "descripcion": "Azúcar blanca refinada",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Dulces",
-      "precioVenta": 1.5,
-      "descuentoVenta": 0,
-      "stock": 200,
-      "idProducto": "4e4a",
-      "id": "4e4a"
-    },
-    {
-      "idProducto": "88e9",
-      "nombre": "Sal de mesa",
-      "descripcion": "Sal marina fina",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Condimentos",
-      "precioVenta": 0.8,
-      "descuentoVenta": 0,
-      "stock": 300,
-      "id": "88e9"
     },
     {
       "nombre": "Pasta",
@@ -397,48 +298,15 @@
       "id": "f2ef"
     },
     {
-      "idProducto": "P015",
       "nombre": "Chocolate",
       "descripcion": "Chocolate negro 70% cacao",
-      "unidadesMedida": "Unidad",
-      "categoria": "Dulces",
+      "unidadesMedida": "U003",
+      "categoria": "C008",
       "precioVenta": 2.5,
       "descuentoVenta": 15,
       "stock": 80,
+      "idProducto": "P015",
       "id": "a073"
-    },
-    {
-      "nombre": "Fresas",
-      "descripcion": "fresas silvestres",
-      "unidadesMedida": "Kilogramo",
-      "categoria": "Frutas",
-      "precioVenta": 2,
-      "descuentoVenta": 10,
-      "stock": 50,
-      "idProducto": "P016",
-      "id": "0e0c"
-    },
-    {
-      "id": "4310",
-      "nombre": "Rollo de canela",
-      "descripcion": "Rollo de canela con nueces",
-      "unidadesMedida": "U003",
-      "categoria": "C003",
-      "precioVenta": "3",
-      "descuentoVenta": 0.5,
-      "stock": "30",
-      "idProducto": "P017"
-    },
-    {
-      "id": "67b6",
-      "nombre": "albaricoque",
-      "descripcion": "rojos como el sol",
-      "unidadesMedida": "U001",
-      "categoria": "C001",
-      "precioVenta": "2.36",
-      "descuentoVenta": 10,
-      "stock": "200",
-      "idProducto": "P018"
     }
   ],
   "unidadesMedida": [
